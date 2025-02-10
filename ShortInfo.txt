@@ -1,0 +1,7 @@
+1. Core.zip - This framework provides common functionality that can be utilized by any application based on its requirements. 
+Creating an artifact with a specific version so that it can be integrated into the application framework.
+
+2. MDLA_Source_Code - This is the application framework. We write scripts based on the application's 
+behavior where reusing the functionality provided by the Core framework.
+
+3. MLDA_Admin_TC - This is a test case for the MDLA application.
