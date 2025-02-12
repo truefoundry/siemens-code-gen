@@ -15,6 +15,9 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_experimental.text_splitter import SemanticChunker
 from langgraph.graph import START, StateGraph
 from typing_extensions import TypedDict
+from dotenv import load_dotenv
+
+load_dotenv()
 
 @dataclass
 class RAGConfig:
@@ -154,13 +157,20 @@ def main():
     
     # Load and index documents
     #docs = processor.load_web_content("https://lilianweng.github.io/posts/2023-06-23-agent/")
-    docs = processor.load_local_content("extracted_texts")
+    documentation_directory = "extracted_texts"
+    docs = processor.load_local_content(documentation_directory)
     pipeline.add_documents(docs)
     
+
+    prompt = open("data/prompt.txt", "r").read()
+
     # Example query
     question = "What is Core Browser Control in Java?"
-    answer = pipeline.query(question)
+    answer = pipeline.query(prompt)
     print(answer)
+
+    with open("data/TC01_Create_Request_predictions_RAG.txt", "w") as file:
+        file.write(answer)
 
     token_counts = analyze_token_statistics(directory="extracted_texts")
     
