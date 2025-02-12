@@ -1,0 +1,460 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+"115716","Test Case","TC01_Dispatcher Education Role_HomeScreen",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Validate the options available","Menu, Search bar, Notification button should be reflected",,,
+,,,"3","Validate the home screen message","You can start browsing the different views by clicking the menu button  at the top left. This button is always available for quick navigation between the views. You can also perform a global search for records, objects and views using the Search field in the blue header.
+
+We hope you enjoy this new product! Feedback is always welcome :-)
+
+- The ClickSoftware team",,,
+"115717","Test Case","TC02_Dispatcher Education Role_HomeScreen_Notification",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Validate the options available","Menu, Search bar, Notification button should be reflected",,,
+,,,"3","Click on Notification icon","Alert Center pop up should be reflected with list of pending notifications Setting and dismiss all alerts button",,,
+,,,"4","Click on Settings","Alert Center Settings should be reflected with Schedule view domains only toggle button, Search Domain, Apply /Cancel button",,,
+,,,"5","Select the required domain from the list and click on Apply","Notifications related to the selected domain should be reflected",,,
+,,,"6","Click on dismiss all alerts","Are you sure? Message should be reflected with Dismiss All and Cancel button",,,
+,,,"7","Click on dismiss all","All the notifications should be removed",,,
+"115718","Test Case","TC03_Dispatcher Education Role_Schedule_Task_Notification_Actions",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Launch CAD application and login to the application","CAD application launched and logged in successfully",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics",,,
+,,,"3","Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"4","Click on Task option","Filter,Sorted by : Call Id, Search Task, Split Task list domain, List of notifications option should be reflected",,,
+,,,"5","Click on Actions icon for any one of the @notification","Below options should be reflected for each notification
+Edit
+Site Assigned Engineers
+Show on Gantt
+Show on Map
+Add to Clipboard
+Show related tasks
+Pin Task
+Comment
+Check Rules
+Get Candidates
+Schedule
+Unschedule                                                                                   Relaxed Get Candidates",,,
+"115719","Test Case","TC04_Dispatcher Education Role_Schedule_Clipboard_Task_Notification_Actions_Edit",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"2","Click on Clipboard option","Filter,Sorted by : Call Id, Search Task, Split Task list domain, List of notifications option should be reflected",,,
+,,,"3","Click on Actions icon for any one of the @notifications","Below options should be reflected for each notification
+Edit                                                                                            Change Status
+Show on Gantt
+Show on Map
+Remove to Clipboard
+Pin Task
+Comment
+Check Rules
+Get Candidates
+Schedule
+Unschedule                                                                                 ",,,
+,,,"4","Click on Edit button","Task pop up window should open with below tabs
+Assignment, General , Time, History",,,
+,,,"5","Click on Assigment","Below details should be reflected with Ok, Apply, Cancel buttons
+Status
+Reschedule Call?
+Assigment Start
+Assigment Finish
+Duration
+Assigned Resource",,,
+,,,"6","Click on General","General notification details are reflected and CSE skills can be added",,,
+,,,"7","Click on Location","Location details should be reflected with customer name, Contact and Email",,,
+,,,"8","Click on Time","DISP Task Creation Date, Planned Start, Planned Finish options should be reflected",,,
+,,,"9","Click on History","Notification history details should be reflected",,,
+"115720","Test Case","TC05_Dispatcher Education Role_Schedule_Clipboard _Task_Notification_Actions_Change Status",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"2","Click on Clipboard option","Filter,Sorted by : Call Id, Search Task, Split Task list domain, List of notifications option should be reflected",,,
+,,,"3","Click on Actions icon for any one of the @notification","Below options should be reflected for each notification
+Edit                                                                                           
+Change Status
+Show on Gantt
+Show on Map
+Remove to Clipboard
+Pin Task
+Comment
+Check Rules
+Get Candidates
+Schedule
+Unschedule ",,,
+,,,"4","Click on Change Status","Depending on Notification status should be reflected like Open, Open-Waitlist, Confirmed,Dispatched",,,
+"115721","Test Case","TC06_Dispatcher Education Role_Schedule_Clipboard _Task_Notification_Actions_Show on Gantt",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"2","Click on Clipboard option","Filter,Sorted by : Call Id, Search Task, Split Task list domain, List of notifications option should be reflected",,,
+,,,"3","Click on Actions icon for any one of the @notification","Below options should be reflected for each notification
+Edit                                                                                           
+Change Status
+Show on Gantt
+Show on Map
+Remove to Clipboard
+Pin Task
+Comment
+Check Rules
+Get Candidates
+Schedule
+Unschedule            ",,,
+,,,"4","Click on Show on Gantt","List of all CSE's is reflected with their schedule for the selected day and user can click and drap the notifications and assign them based on their availability",,,
+"115723","Test Case","TC08_Dispatcher Education Role_Schedule_Clipboard_Task_Notification_Actions_PinTask",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"2","Click on Clipboard option","Filter,Sorted by : Call Id, Search Task, Split Task list domain, List of notifications option should be reflected",,,
+,,,"3","Click on Actions icon of confirmed status of the @notification","Below options should be reflected for each notification
+Edit                                                                                           
+Change Status
+Show on Gantt
+Show on Map
+Remove to Clipboard
+Pin Task
+Comment
+Check Rules
+Get Candidates
+Schedule
+Unschedule",,,
+,,,"4","Click on Pin task","The task selected should be pinned",,,
+"115724","Test Case","TC09_Dispatcher Education Role_Schedule_Clipboard_Task_Notification_Actions_Comment",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"2","Click on Clipboard option","Filter,Sorted by : Call Id, Search Task, Split Task list domain, List of notifications option should be reflected",,,
+,,,"3","Click on Actions icon of confirmed status of the @notification","Below options should be reflected for each notification
+Edit                                                                                           
+Change Status
+Show on Gantt
+Show on Map
+Remove to Clipboard
+Pin Task
+Comment
+Check Rules
+Get Candidates
+Schedule
+Unschedule",,,
+,,,"4","Click on Comment","Comment window should be reflected and user should be able to add the comment",,,
+"115725","Test Case","TC10_Dispatcher Education Role_Schedule_Clipboard_Task_Notification_Actions_CheckRules",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"2","Click on Clipboard option","Filter,Sorted by : Call Id, Search Task, Split Task list domain, List of notifications option should be reflected",,,
+,,,"3","Click on Actions icon of Confirmed status of the @notification","Below options should be reflected for each notification
+Edit                                                                                           
+Change Status
+Show on Gantt
+Show on Map
+Remove to Clipboard
+Pin Task
+Comment
+Check Rules
+Get Candidates
+Schedule
+Unschedule",,,
+,,,"4","Click on Check Rules","Rule Violations Check popup window should be displayed",,,
+"115726","Test Case","TC11_Dispatcher Education Role_Schedule_Gantt_GanttFilter_Add",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Launch CAD Application and Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"2","Click on Gantt option","Gantt Filters, Sort, Change Gantt resolution, Change the start date of the Gantt Settings, Search Resources, List of Resources should be reflected",,,
+,,,"3","Click on Gantt Filter","Search bar with Manage and Clear button should be reflected",,,
+,,,"4","Click on Manage button","Filters Management Resources should be reflected with Add button, System Filters and My filters option",,,
+,,,"5","Click on Add button","Rename , Delete button should be enabled with Advance filter check box , Add condition option and Apply, Save As, Save buttons",,,
+,,,"6","Click on Add condition","User should be able to add the required condition from the drop down",,,
+,,,"7","Click on Advance Filter checkbox","""Write down the expression to evaluate the condition:"" field should be reflected",,,
+"115727","Test Case","TC12_Dispatcher Education Role_Schedule_Gantt_GanttSorting",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Launch CAD Application and Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"2","Click on Gantt option","Gantt Filters, Sort, Change Gantt resolution, Change the start date of the Gantt Settings, Search Resources, List of Resources should be reflected",,,
+,,,"3","Click on Resource and District sortby Name icon","Gantt Sorting window popup should be displayed with select columns and Sort by fields along with sort and cancel button",,,
+,,,"4","Select Column from the Select Columns fields and Drag and drop the selected columns to sort by fields","Validate the Selected columns are listed in the sort by fields and which are drag and drop from select columns",,,
+"115728","Test Case","TC13_Dispatcher Education Role_Schedule_Gantt_Resources_Option(3 dot next to each resources)_Create N/A",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Launch CAD Application and Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"2","Click on Gantt option","Gantt Filters, Sort, Change Gantt resolution, Change the start date of the Gantt, Settings, Search Resources, List of Resources should be reflected",,,
+,,,"3","Click on 3 dot option next to each resource","Below option should be reflected",,,
+,,,"4","Click on Create N/A","Non Availability pop up should be reflected with General, Location, Recurrence, Notes and each with OK,Apply, Cancel button",,,
+,,,"5","Enter required Start date, Finish Date, Type field under general and click on Ok button","Non Availability should be created for selected date & time and Type",,,
+"115729","Test Case","TC14_Dispatcher Education Role_Calendar Management_Calendar_Manage Filter_Add",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Launch CAD application and login to the application","CAD application launched and logged in successfully",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics",,,
+,,,"3","Clik on Calendar Management","Calenders and Resources fields along with that Manage Filters, Sorting, Refresh and New options should be display",,,
+,,,"4","Navigate to Calendars","Name and Base fields should be displayed",,,
+,,,"5","Click on Manage Filters Option","Filters Management - Calendar screen page should be displayed",,,
+,,,"6","Click on Add","Calendar filter 01 * - Conditions should be displayed",,,
+,,,"7","Enter the Condition by clicking on  Add conditions i.e, ""Select a property field"" like ""Name contains 400""","Condition should be entered",,,
+,,,"8","Click on Apply and Click on OK","Condition should be applied and saved , Based on Condition the Name and Base list should be dispalyed",,,
+"115730","Test Case","TC15_Dispatcher Education Role_Views_EducationWaitlist_EducationWaitlist-ListItem_Edit_Ok",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics",,,
+,,,"3","Click on View","Below options should be reflected 
+Education Waitlist
+Task
+Engineer
+Education Skills
+Assignent",,,
+,,,"4","Click on Education Waitlist","Education Waitlist screen should be reflected with Search Bar, Manage Filter, Sorting, Refresh,New,Export buttons and list of EducationWaitlist",,,
+,,,"5","Click on any of the education waitlist item from the list and do some changes , Click on Apply and Ok button","Edited Education Waitlist details is displayed",,,
+"115731","Test Case","TC16_Dispatcher Education Role_View_Education WaitList_Duplicate",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Launch CAD application and login to the application","CAD application launched and logged in successfully",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics",,,
+,,,"3","Click on View Option","Below options should be reflected 
+Education Waitlist
+Task
+Engineer
+Education Skills
+Assignent",,,
+,,,"4","Navigate to Education Waitlist suboption","Education WaitList screen should be displayed",,,
+,,,"5","Check for Manage Filter, Sorting, Refresh , Duplicate , Delete, New and Export options","Manage filter, sorting,  refresh,Delete, New , Export option should be  displayed",,,
+,,,"6","Check whether Education WaitList contains fields like Priority Ranking, Notification Number, Sales Order, FL#, Requested Training Start Date, Customer Contact Date, Perferred CES,Customer Name, City, State","Education WaitList should contains fields like Priority Ranking, Notification Number, Sales Order, FL#, Requested Training Start Date, Customer Contact Date, Perferred CES,Customer Name, City, State",,,
+,,,"7","Click on any one of the Notification Number from the List","Notification details should be displayed",,,
+,,,"8","Click on duplicate","Another copy of same notification should be created",,,
+,,,"9","Click on Apply and Click on OK","Duplicate copy is created and saved",,,
+,,,"10","To validate the Duplicate copy, go to view","Duplicate copy of the same notification should be displayed",,,
+"115732","Test Case","TC17_Dispatcher Education Role_View_Education WaitList_Delete",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Launch CAD application and login to the application","CAD application launched and logged in successfully",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics",,,
+,,,"3","Click on View Option","Below options should be reflected 
+Education Waitlist
+Task
+Engineer
+Education Skills
+Assignent",,,
+,,,"4","Navigate to Education Waitlist suboption","Education WaitList screen should be displayed",,,
+,,,"5","Check the availablity of  Manage Filter, Sorting, Refresh , Duplicate ,Delete New and Export options","Manage filter, sorting,  refresh, Delete,New , Export option should be  displayed",,,
+,,,"6","Check whether Education WaitList contains fields like Priority Ranking, Notification Number, Sales Order, FL#, Requested Training Start Date, Customer Contact Date, Perferred CES,Customer Name, City, State","Education WaitList should contains fields like Priority Ranking, Notification Number, Sales Order, FL#, Requested Training Start Date, Customer Contact Date, Perferred CES,Customer Name, City, State",,,
+,,,"7","Click on any one of the Notification Number from the List","Notification details should be displayed",,,
+,,,"8","Click on duplicate","Another copy of same notification should be created",,,
+,,,"9","Click on Apply and Click on OK","Duplicate copy is created and saved",,,
+,,,"10","To validate the Duplicate copy, go to view","Duplicate copy of the same notification should be displayed",,,
+,,,"11","Select any one of the notification in checkbox, Click on Delete","window Popup message should be displayed as ""
+Are you sure you want to delete the selected EducationWaitlist records?"" with Delete and Cancel button",,,
+"115733","Test Case","TC18_Dispatcher Education Role_Views_Task",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics",,,
+,,,"3","Click on View Option","Below options should be reflected 
+Education Waitlist
+Task
+Engineer
+Education Skills
+Assignent",,,
+,,,"4","Click on task option","Task screen should be reflected with Search Bar, Manage Filter, Sorting, Refresh,New,Export buttons and list of notification",,,
+"115734","Test Case","TC19_Dispatcher Education Role_Views_Task_NotificationListItem",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics",,,
+,,,"3","Click on View Option","Below options should be reflected 
+Education Waitlist
+Task
+Engineer
+Education Skills
+Assignent",,,
+,,,"4","Click on task option","Task screen should be reflected with Search Bar, Manage Filter, Sorting, Refresh,New,Export buttons and list of notification",,,
+,,,"5","Click on any of the notification from the list","Task screen should be reflected with below options with OK, Apply, Cancel buttons
+Assignment
+General
+Location
+Time
+History",,,
+"115735","Test Case","TC20_Dispatcher Education Role_Views_Task_Manage Filters_Advance Filter",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics",,,
+,,,"3","Click on View Option","Below options should be reflected 
+Education Waitlist
+Task
+Engineer
+Education Skills
+Assignent",,,
+,,,"4","Click on task option","Task screen should be reflected with Search Bar, Manage Filter, Sorting, Refresh,New,Export buttons and list of notification",,,
+,,,"5","Click on Manage Filters","Filters Management - Task screen should be displayed",,,
+,,,"6","Click on Add","Task filter 01 * - Conditions folder is created",,,
+,,,"7","Click on Advance Filter","Text Fields is generated like ""Write down the expression to evaluate the condition:""",,,
+,,,"8","Enter the expression, Click on Apply and Save","Expression should be Applied and saved",,,
+"115736","Test Case","TC21_Dispatcher Education Role_Views_Task_Manage Filters_Delete",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics",,,
+,,,"3","Click on View Option","Below options should be reflected 
+Education Waitlist
+Task
+Engineer
+Education Skills
+Assignent",,,
+,,,"4","Click on task option","Task screen should be reflected with Search Bar, Manage Filter, Sorting, Refresh,New,Export buttons and list of notification",,,
+,,,"5","Click on Manage Filters","Filters Management - Task screen should be displayed",,,
+,,,"6","Click on Add","Task filter 01 * - Conditions folder is created",,,
+,,,"7","Click on Delete","window Popup message should be displayed as ""
+Are you sure you want to delete the selected EducationWaitlist records?"" with Delete and Cancel button",,,
+,,,"8","Click on Delete button","Condition Filter folder should be deleted.",,,
+"115737","Test Case","TC22_Dispatcher Education Role_Views_Engineer_ListofEngineers",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics",,,
+,,,"3","Click on View Option","Below options should be reflected 
+Education Waitlist
+Task
+Engineer
+Education Skills
+Assignent",,,
+,,,"4","Click on Engineer option","Engineer screen should be reflected with Search Bar, Manage Filter, Sorting, Refresh,New,Export buttons and list of enigneers",,,
+,,,"5","Click on any engineer from the list","Resource screen should be reflected with below options with OK, Apply, Cancel
+Personal
+Location
+Professional",,,
+"115738","Test Case","TC23_Dispatcher Education Role_Views_Engineer_New",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics",,,
+,,,"3","Click on View Option","Below options should be reflected 
+Education Waitlist
+Task
+Engineer
+Education Skills
+Assignent",,,
+,,,"4","Click on Engineer option","Engineer screen should be reflected with Search Bar, Manage Filter, Sorting, Refresh,New,Export buttons and list of enigneers",,,
+,,,"5","Click on New","Resource screen should be reflected with below options with OK, Apply, Cancel
+Personal
+Location
+Professional",,,
+"115739","Test Case","TC24_Dispatcher Education Role_Views_Education Skills_New",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics",,,
+,,,"3","Click on View Option","Below options should be reflected 
+Education Waitlist
+Task
+Engineer
+Education Skills
+Assignent",,,
+,,,"4","Click on Education Skills","Education skills screen should be reflected with Manage Filters, Sorting, Refresh, New Options and List of Education Skills",,,
+,,,"5","Click on New","New Education Skills screen should be displayed with Skill fields along with ok, Apply and Cancel button",,,
+,,,"6","Enter Skill in Skill Field and Click on Ok","Education Skills is Added to the List with a Key Number",,,
+"115740","Test Case","TC25_Dispatcher Education Role_Views_Education Skills_Manage Filters_Add",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics",,,
+,,,"3","Click on View Option","Below options should be reflected 
+Education Waitlist
+Task
+Engineer
+Education Skills
+Assignent",,,
+,,,"4","Click on Education Skills","Education skills screen should be reflected with Manage Filters, Sorting, Refresh, New Options and List of Education Skills",,,
+,,,"5","Click on Manage Filters","Filters Management - EducationSkills popup screen should be displayed with Add, Rename, Delete, Add Condition, Advanced Filter, System Filters, My Filters Options along with Apply, Save As and Save button",,,
+,,,"6","Click on Add, Enter the conditions, Click on save","EducationSkills filter 01 * folder should be created and condition should be entered and saved",,,
+"115741","Test Case","TC26_Dispatcher Education Role_Views_Assignment",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics",,,
+,,,"3","Click on View Option","Below options should be reflected 
+Education Waitlist
+Task
+Engineer
+Education Skills
+Assignent",,,
+,,,"4","Click on Assignment","Assignment List screen should be displayed with Search bar, Manage Filters, Sorting , Refresh, New and Export Options.",,,
+"115742","Test Case","TC27_Dispatcher Education Role_Views_Assignment_Sorting",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics",,,
+,,,"3","Click on View Option","Below options should be reflected 
+Education Waitlist
+Task
+Engineer
+Education Skills
+Assignent",,,
+,,,"4","Click on Assignment","Assignment List screen should be displayed with Search bar, Manage Filters, Sorting , Refresh, New and Export Options.",,,
+,,,"5","Click on Sorting","Assignment Sorting window popup screen should be displayed Select Columns and Sort By fields along with Sort , Cancel button and  message 'Drag the columns you wish to use for sorting, in the desired order'",,,
+"115743","Test Case","TC28_Dispatcher Education Role_Views_Assignment_Manage Filters_Rename",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics",,,
+,,,"3","Click on View Option","Below options should be reflected 
+Education Waitlist
+Task
+Engineer
+Education Skills
+Assignent",,,
+,,,"4","Click on Assignment","Assignment List screen should be displayed with Search bar, Manage Filters, Sorting , Refresh, New and Export Options.",,,
+,,,"5","Click on Manage Filter","Filters Management - Non-availability popup screen should be displayed",,,
+,,,"6","Select the existing Non-availabilityfilter folder and Click on Rename","Selected Filter folder should be able to Rename.",,,
+,,,"7","Click on save","Rename folder should be saved.",,,
+"115744","Test Case","TC29_Dispatcher Education Role_Schedule_ClipBoard_Notification_Actions_BookAppointment",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"2","Click on Task option","Filter,Sorted by : Call Id, Search Task, Split Task list domain, List of notifications option should be reflected",,,
+,,,"3","Click on Actions icon for Open @notification","Below options should be reflected for each notification",,,
+,,,"4","Click on Book Appointment","Appointment Booking pop up should be reflected with Get Appointments / close buttons and Appointment Start date field",,,
+,,,"5","Click on Get Appointments","Appointments available for the week should be reflected",,,
+,,,"6","Select the CSE slot for respective date and time set before","CSE Slot should be selected and Book Slot window popup should be displayed with Book Appointment and Cancel button",,,
+,,,"7","Click on Book Appointment button in the window popup","Appointment Details should be reflected.",,,

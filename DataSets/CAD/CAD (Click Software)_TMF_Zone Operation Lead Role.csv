@@ -1,0 +1,599 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+"104881","Test Case","TC01_Zone Operation Lead Role_Schedule_Task_Notification_Actions",,,,"AM - Projects\CAD (Click software)",,"Ready"
+,,,"1","Launch CAD application and login to the application","CAD application launched and logged in successfully",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen Search Field Home Schedule Calendar Management Views Analytics
+",,,
+,,,"3","Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Territory Planning and Working on Domain options",,,
+,,,"4","Search the Notification","Notification should be appear under the Clipboard tab and assign the notification to the CSE.",,,
+,,,"5","Click on Actions icon of the @notification","Below options should be reflected for each notification
+Edit
+Site Assigned Engineers
+Show on Gantt
+Show on Map
+Add to Clipboard
+Show related tasks
+Pin Task
+Comment
+Check Rules
+Get Candidates
+Schedule
+Unschedule                                                                                   Relaxed Get Candidates",,,
+"104882","Test Case","TC02_Zone Operation Lead Role_Schedule_Task_Notification_Actions_Edit",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"2","Click on Task option
+","Filter,Sorted by : Call Id, Search Task, Split Task list domain, List of notifications option should be reflected
+",,,
+,,,"3","Search the Notification
+","Notification should be appear under the Clipboard tab and assign the notification to the CSE.
+",,,
+,,,"4","Click on Actions icon of the @notification","Below options should be reflected for each notification
+Edit
+Site Assigned Engineers
+Show on Gantt
+Show on Map
+Add to Clipboard
+Show related tasks
+Pin Task
+Comment
+Check Rules
+Get Candidates
+Schedule
+Unschedule                                                                                   Relaxed Get Candidates",,,
+,,,"5","Click on Edit button","Task pop up window should open with below tabs
+Assignment, General , Bundling, Comments, Time, Customer , Location , Resource, Dependencies, Notes , Functional Location , History",,,
+,,,"6","Click on Assigment","Below details should be reflected with Ok, Apply, Cancel buttons
+Assigment Start
+Duration
+Assigment Finish
+Assigned Resource",,,
+,,,"7","Click on General","General notification details are reflected and CSE skills can be added",,,
+,,,"8","Click on Comments","Any comments added present in SAP is reflected here with ETA cancellation details and Site Assigned Engineers details",,,
+,,,"9","Click on Time","Early start and due date , Appointment date and time All date and time, Schedule details should be reflected",,,
+,,,"10","Click on Customer","Customer Details and Contract details should be reflected",,,
+,,,"11","Click on Location","Location latitude and longitude details should be reflected",,,
+,,,"12","Click on Resource","Primary, Secondary,Required , Additional resources details should be reflected",,,
+,,,"13","Click on Dependencies","Time dependencies and Resource dependencies option should be reflected and user should be able to add the same",,,
+,,,"14","Click on Notes","Any messages like Site messages, long text should be reflected",,,
+,,,"15","Click on Functional Location","FL details should be reflected",,,
+,,,"16","Click on History","Notification history details should be reflected",,,
+"104883","Test Case","TC03_Zone Operation Lead Role_Schedule_Task_Notification_Actions_Site Assigned Engineers",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"2","Click on Task option","Filter,Sorted by : Call Id, Search Task, Split Task list domain, List of notifications option should be reflected",,,
+,,,"3","Search the Notification
+","Notification should be appear under the Clipboard tab and assign the notification to the CSE.
+",,,
+,,,"4","Click on Actions icon of the @notification","Below options should be reflected for each notification
+Edit
+Site Assigned Engineers
+Show on Gantt
+Show on Map
+Add to Clipboard
+Show related tasks
+Pin Task
+Comment
+Check Rules
+Get Candidates
+Schedule
+Unschedule                                                                                   Relaxed Get Candidates",,,
+,,,"5","Click on Site Assigned Engineers button","Site Assigned Engineers pop up window should be reflected with list of engineers assigned for the notification with OK button",,,
+"104884","Test Case","TC04_Zone Operation Lead Role_Schedule_Task_Notification_Actions_Show on Gantt",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"2","Click on Task option","Filter, Sorted by : Call Id, Search Task, Split Task list domain, List of notifications option should be reflected",,,
+,,,"3","Search the Notification
+","Notification should be appear under the Clipboard tab and assign the notification to the CSE.
+",,,
+,,,"4","Click on Actions icon of the @notification","Below options should be reflected for each notification
+Edit
+Site Assigned Engineers
+Show on Gantt
+Show on Map
+Add to Clipboard
+Show related tasks
+Pin Task
+Comment
+Check Rules
+Get Candidates
+Schedule
+Unschedule                                                                                   Relaxed Get Candidates",,,
+,,,"5","Click on Show on Gantt","List of all CSE's is reflected with their schedule for the selected day and user can click and drap the notifications and assign them based on their availability",,,
+"104885","Test Case","TC05_Zone Operation Lead Role_Schedule_Task_Notification_Actions_Show on Map",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"2","Click on Task option","Filter,Sorted by : Call Id, Search Task, Split Task list domain, List of notifications option should be reflected",,,
+,,,"3","Search the Notification
+","Notification should be appear under the Clipboard tab and assign the notification to the CSE.
+",,,
+,,,"4","Click on Actions icon of the @notification","Below options should be reflected for each notification
+Edit
+Site Assigned Engineers
+Show on Gantt
+Show on Map
+Add to Clipboard
+Show related tasks
+Pin Task
+Comment
+Check Rules
+Get Candidates
+Schedule
+Unschedule                                                                                   Relaxed Get Candidates",,,
+,,,"5","Click on Show on Map","Customer location details should be reflected on map",,,
+"104886","Test Case","TC06_Zone Operation Lead Role_Schedule_Task_Notification_Actions_AddtoClipboard",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"2","Click on Task option","Filter, Sorted by : Call Id, Search Task, Split Task list domain, List of notifications option should be reflected",,,
+,,,"3","Click on Actions icon for existing Complete/Confirmed notifications","Below options should be reflected for each notification
+Edit
+Site Assigned Engineers
+Show on Gantt
+Show on Map
+Add to Clipboard
+Show related tasks
+Pin Task
+Comment
+Check Rules
+Get Candidates
+Schedule
+Unschedule                                                                                   Relaxed Get Candidates",,,
+,,,"4","Click on Add to clip board","Notification should be reflected under Clipboard section",,,
+"104887","Test Case","TC07_Zone Operation Lead Role_Schedule_Task_Notification_Actions_ShowRelatedTasks",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"2","Click on Task option","Filter, Sorted by : Call Id, Search Task, Split Task list domain, List of notifications option should be reflected",,,
+,,,"3","Search the Notification
+","Notification should be appear under the Clipboard tab and assign the notification to the CSE.
+",,,
+,,,"4","Click on Actions icon of the @notification","Below options should be reflected for each notification
+Edit
+Site Assigned Engineers
+Show on Gantt
+Show on Map
+Add to Clipboard
+Show related tasks
+Pin Task
+Comment
+Check Rules
+Get Candidates
+Schedule
+Unschedule                                                                                   Relaxed Get Candidates",,,
+,,,"5","Click on Show related tasks","Task related to the same notification should be reflected",,,
+"104888","Test Case","TC08_Zone Operation Lead Role_Schedule_Task_Notification_Actions_PinTask",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"2","Click on Task option","Filter,Sorted by : Call Id, Search Task, Split Task list domain, List of notifications option should be reflected",,,
+,,,"3","Search the Notification
+","Notification should be appear under the Clipboard tab and assign the notification to the CSE.
+",,,
+,,,"4","Click on Actions icon of the @notification","Below options should be reflected for each notification
+Edit
+Site Assigned Engineers
+Show on Gantt
+Show on Map
+Add to Clipboard
+Show related tasks
+Pin Task
+Comment
+Check Rules
+Get Candidates
+Schedule
+Unschedule                                                                                   Relaxed Get Candidates",,,
+,,,"5","Click on Pin task","The task selected should be pinned",,,
+"104889","Test Case","TC09_Zone Operation Lead Role_Schedule_Task_Notification_Actions_Comment",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"2","Click on Task option","Filter, Sorted by : Call Id, Search Task, Split Task list domain, List of notifications option should be reflected",,,
+,,,"3","Search the Notification
+","Notification should be appear under the Clipboard tab and assign the notification to the CSE
+",,,
+,,,"4","Click on Actions icon of the @notification","Below options should be reflected for each notification
+Edit
+Site Assigned Engineers
+Show on Gantt
+Show on Map
+Add to Clipboard
+Show related tasks
+Pin Task
+Comment
+Check Rules
+Get Candidates
+Schedule
+Unschedule                                                                                   Relaxed Get Candidates",,,
+,,,"5","Click on Comment","Comment window should be reflected and user should be able to add the comment",,,
+"104890","Test Case","TC10_Zone Operation Lead Role_Schedule_Task_Notification_Actions_CheckRules",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"2","Click on Task option","Filter,Sorted by : Call Id, Search Task, Split Task list domain, List of notifications option should be reflected",,,
+,,,"3","Search the Notification
+","Notification should be appear under the Clipboard tab and assign the notification to the CSE.
+",,,
+,,,"4","Click on Actions icon of the @notification","Below options should be reflected for each notification
+Edit
+Site Assigned Engineers
+Show on Gantt
+Show on Map
+Add to Clipboard
+Show related tasks
+Pin Task
+Comment
+Check Rules
+Get Candidates
+Schedule
+Unschedule                                                                                   Relaxed Get Candidates",,,
+,,,"5","Click on Check Rules","Rules Violation Window should be reflected with close button",,,
+"104891","Test Case","TC11_Zone Operation Lead Role_Schedule_ClipBoard_Notification_Actions_GetCandidates",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"2","Click on Task option","Filter,Sorted by : Call Id, Search Task, Split Task list domain, List of notifications option should be reflected",,,
+,,,"3","Search the Notification
+","Notification should be appear under the Clipboard tab
+",,,
+,,,"4","Click on Actions icon of the @notification","Below options should be reflected for each notification
+Edit
+Site Assigned Engineers
+Show on Gantt
+Show on Map
+Add to Clipboard
+Show related tasks
+Pin Task
+Comment
+Check Rules
+Get Candidates
+Schedule
+Unschedule                                                                                   Relaxed Get Candidates",,,
+,,,"5","Click on Get Candidates","CSE list available for the notification should be reflected",,,
+"104893","Test Case","TC13_Zone Operation Lead Role_Schedule_Gantt_GanttFilter_Add",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD Application and Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"2","Click on Gantt option","Gantt Filters, Sort, Change Gantt resolution, Change the start date of the Gantt Settings, Search Resources, List of Resources should be reflected",,,
+,,,"3","Click on Gantt Filter","Search bar with Manage and Clear button should be reflected",,,
+,,,"4","Click on Manage button","Filters Management Resources should be reflected with Add button, System Filters and My filters option",,,
+,,,"5","Click on Add button","Rename , Delete button should be enabled with Advance filter check box , Add condition option and Apply, Save As, Save buttons",,,
+,,,"6","Click on Add condition","User should be able to add the required condition from the drop down",,,
+,,,"7","Click on Advance Filter checkbox","""Write down the expression to evaluate the condition:"" field should be reflected",,,
+"104894","Test Case","TC14_Zone Operation Lead Role_Schedule_Gantt_Resources_Option(3 dot next to each resources)_Edit",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD Application and Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"2","Click on Gantt option","Gantt Filters, Sort, Change Gantt resolution, Change the start date of the Gantt, Settings, Search Resources, List of Resources should be reflected",,,
+,,,"3","Click on 3 dot option next to each resource","Below option should be reflected
+Edit
+Show Home Base
+Show Daily Route
+Add Tasks to Clipboard
+Relocate Resource
+Cancel All Relocations
+",,,
+,,,"4","Click on Edit","Resource pop up should be reflected with Personal, Location, Professional and History sections with OK, Apply, Cancel button for each
+",,,
+"104895","Test Case","TC15_Zone Operation Lead Role_Calendar Management_Calendar_Manage Filter_Add",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD application and login to the application","CAD application launched and logged in successfully",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics",,,
+,,,"3","Clik on Calendar Management","Calendars and Resources fields along with that Manage Filters, Sorting, Refresh and New options should be display",,,
+,,,"4","Navigate to Calendars","Name and Base fields should be displayed",,,
+,,,"5","Click on Manage Filters Option","Filters Management - Calendar screen page should be displayed",,,
+,,,"6","Click on Add","Calendar filter 01 * - Condition should be displayed",,,
+,,,"7","Enter the Condition by clicking on  Add conditions i.e, ""Select a property field"" like ""Name contains 400""","Condition should be entered",,,
+,,,"8","Click on Apply and Click on OK","Condition should be applied and saved , Based on Condition the Name and Base list should be displayed",,,
+"104896","Test Case","TC16_Zone Operation Lead Role_CalendarManagement_Resources_AnyResourcesItem",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen",,,
+,,,"3","Click on Calendar Management","Calendar and Resources section are reflected",,,
+,,,"4","Click on Resources","Search Bar, Manage Filter, Sorting, Refresh, New, Export button should be reflected with list of resources calendar schedule",,,
+,,,"5","Click on any of the resource item from the list","Resource schedule screen should be reflected",,,
+"104897","Test Case","TC17_Zone Operation Lead Role_View_Capacity Limitations_Sorting",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD application and login to the application","CAD application launched and logged in successfully",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics",,,
+,,,"3","Click on View Option","Views options should contains the following suboptions like:
+Capacity Limitations
+Capacity Used Daily
+Education Waitlist
+Resource Territory
+Task
+Engineer",,,
+,,,"4","Navigate to Capacity Limitations suboption","Generic Capacity page should be displayed",,,
+,,,"5","In Generic Capacity contains fields like Name, District, Task Type Category, Capacity Threshold and along with the options like manage filters, sorting, refresh, New, Export","In Generic Capacity , fields like Name, District, Task Type Category, Capacity Threshold should be displayed with the list and along with the options like manage filters, sorting, refresh, New, Export should be displayed",,,
+,,,"6","Click on Sorting","Generic Capacity Sorting page should be displayed",,,
+,,,"7","Select Columns list are like Name, District, Task Type Category, Capacity Threshold","Select Columns list are like Name, District, Task Type Category, Capacity Threshold should be displayed under the select columns list",,,
+,,,"8","Drag the Selected Columns and drop in the Sort by table","Dragged select columns should be dropped in the sort by table",,,
+,,,"9","Set the sorting for each fields like :
+ Name as A-Z or Z-A
+District as A-Z or Z-A
+Task Type Category as A-Z or Z-A
+Capacity Threshold as Acending or Decesending","All fields in the sort by should be validate",,,
+,,,"10","Click on sort","All the fields should be sorted and displayed.",,,
+"104898","Test Case","TC18_Zone Operation Lead Role_Views_CapacityLimitations_CapacityLimitListItem_Edit_OK",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics",,,
+,,,"3","Click on Views","Views options should contains the following suboptions like:
+Capacity Limitations
+Capacity Used Daily
+Education Waitlist
+Resource Territory
+Task
+Engineer
+",,,
+,,,"4","Click on Capacity Limitations","Generic Capacity screen should be reflected with Search Bar, Manage Filter, Sorting, Refresh,New,Export buttons and list of capacity limits",,,
+,,,"5","Click on any of the Capacity limit item from the list","Detail screen should be reflected for the selected list item with Name, District, Task Type category, Time Resolution, Capacity Threshold fields and OK, Apply, Cancel button",,,
+,,,"6","Update any of the field and Click on OK button","The changes made should be saved",,,
+"104899","Test Case","TC19_Zone Operation Lead Role_View_Capacity Used Daily_New",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD application and login to the application","CAD application launched and logged in successfully",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics",,,
+,,,"3","Click on View Option","Views options should contains the following suboptions like:
+Capacity Limitations
+Capacity Used Daily
+Education Waitlist
+Resource Territory
+Task
+Engineer",,,
+,,,"4","Navigate to Capacity Used Daily","Periodic Capacity page should be displayed",,,
+,,,"5","Check whether Manage filter, sorting,  refresh, New , Export option are available","Manage filter, sorting,  refresh, New , Export option should be  available",,,
+,,,"6","Check the following fields Periodic Capacity:
+Name
+District
+Task Typen Category
+Entry Date
+Capacity Threshold
+Actual Capacity Used","The following fields should be in Periodic Capacity:
+Name
+District
+Task Typen Category
+Entry Date
+Capacity Threshold
+Actual Capacity Used",,,
+,,,"7","Click on New","New (CapacityLimitsDynamic) page should be displayed",,,
+,,,"8","Enter the all the Details","Details should be entered",,,
+,,,"9","Click on Apply and Click on OK","Details should be applied and saved",,,
+"104900","Test Case","TC20_Zone Operation Lead Role_Views_CapacityUsedDaily_CapacityUsedDailyListItem",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics
+",,,
+,,,"3","Click on Views","Views options should contains the following suboptions like:
+Capacity Limitations
+Capacity Used Daily
+Education Waitlist
+Resource Territory
+Task
+Engineer
+",,,
+,,,"4","Click on Capacity Used Daily","Periodic Capacity screen should be reflected with Search Bar, Manage Filter, Sorting, Refresh,New,Export buttons and list of capacity used daily",,,
+,,,"5","Click on any of the Capacity Used Daily item from the list","Detail screen should be reflected for the selected list item with Name,District,Task Type category, Time Resolution,Capacity Threshold fields and OK, Apply, Cancel button",,,
+"104901","Test Case","TC21_Zone Operation Lead Role_Views_EducationWaitlist_New",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Home, Schedule, Calendar Management, View , Analytics",,,
+,,,"3"," Click on View","Below sub options should be reflected
+Capacity Limitations, Capacity Used Daily, Education Waitlist, Resource Territory, Task , Engineer
+",,,
+,,,"4","Click on Education Waitlist","Education Waitlist screen should be reflected with Search Bar, Manage Filter, Sorting, Refresh,New,Export buttons and list of education waitlist",,,
+,,,"5","Click on New","Education Waitlist screen should be reflected with OK, Apply, Cancel button",,,
+"104902","Test Case","TC22_Zone Operation Lead Role_View_Education WaitList_Duplicate",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD application and login to the application","CAD application launched and logged in successfully",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics",,,
+,,,"3","Click on View Option","Views options should contains the following suboptions like:
+Capacity Limitations
+Capacity Used Daily
+Education Waitlist
+Resource Territory
+Task
+Engineer",,,
+,,,"4","Navigate to Education Waitlist suboption","Education WaitList screen should be displayed",,,
+,,,"5","Check for Manage Filter, Sorting, Refresh , Duplicate , Delete, New and Export options","Manage filter, sorting,  refresh,Delete, New , Export option should be  displayed",,,
+,,,"6","Check whether Education WaitList contains fields like Priority Ranking, Notification Number, Sales Order, FL#, Requested Training Start Date, Customer Contact Date, Perferred CES,Customer Name, City, State","Education Waitlist should contains fields like Priority Ranking, Notification Number, Sales Order, FL#, Requested Training Start Date, Customer Contact Date, Preferred CSE, Customer Name, City, State",,,
+,,,"7","Click on any one of the Notification Number from the List","Notification details should be displayed",,,
+,,,"8","Click on duplicate","Another copy of same notification should be created",,,
+,,,"9","Click on Apply and Click on OK","Duplicate copy is created and saved",,,
+,,,"10","To validate the Duplicate copy, go to view","Duplicate copy of the same notification should be displayed",,,
+"104903","Test Case","TC23_Zone Operation Lead Role_View_Education WaitList_Delete",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD application and login to the application","CAD application launched and logged in successfully",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics",,,
+,,,"3","Click on View Option","Views options should contains the following suboptions like:
+Capacity Limitations
+Capacity Used Daily
+Education Waitlist
+Resource Territory
+Task
+Engineer",,,
+,,,"4","Navigate to Education Waitlist suboption","Education WaitList screen should be displayed",,,
+,,,"5","Check the availablity of  Manage Filter, Sorting, Refresh , Duplicate ,Delete New and Export options","Manage filter, sorting,  refresh, Delete,New , Export option should be  displayed",,,
+,,,"6","Check whether Education Waitlist contains fields like Priority Ranking, Notification Number, Sales Order, FL#, Requested Training Start Date, Customer Contact Date, Perferred CSE, Customer Name, City, State","Education Waitlist should contains fields like Priority Ranking, Notification Number, Sales Order, FL#, Requested Training Start Date, Customer Contact Date, Perferred CSE, Customer Name, City, State",,,
+,,,"7","Click on any one of the Notification Number from the List","Notification details should be displayed",,,
+,,,"8","Click on duplicate","Another copy of same notification should be created",,,
+,,,"9","Click on Apply and Click on OK","Duplicate copy is created and saved",,,
+,,,"10","To validate the Duplicate copy, go to view","Duplicate copy of the same notification should be displayed",,,
+,,,"11","Select any one of the notification in checkbox, Click on Delete","window Popup message should be displayed as ""
+Are you sure you want to delete the selected EducationWaitlist records?"" with Delete and Cancel button",,,
+,,,"12","Click on Delete","Selected Notification should be deleted",,,
+"104904","Test Case","TC24_Zone Operation Lead Role_Views_EducationWaitlist_EducationWaitlist-ListItem_Edit_Ok",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Home, Schedule, Calendar Management, View , Analytics
+",,,
+,,,"3"," Click on View","Below sub options should be reflected
+Capacity Limitations, Capacity Used Daily, Education Waitlist, Resource Territory, Task , Engineer",,,
+,,,"4","Click on Education Waitlist","Education Waitlist screen should be reflected with Search Bar, Manage Filter, Sorting, Refresh, New, Export buttons and list of capacity used daily",,,
+,,,"5","Click on any of the education waitlist item from the list","Detail screen should be reflected for the selected list item with OK, Apply, Cancel button",,,
+"104905","Test Case","TC25_Zone Operation Lead Role_Views_ResourceTerritory_Refresh",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Home, Schedule, Calendar Management, View , Analytics
+",,,
+,,,"3"," Click on View","Below sub options should be reflected
+Capacity Limitations, Capacity Used Daily, Education Waitlist, Resource Territory, Task , Engineer",,,
+,,,"4","Click on resource territory","Resource territory view screen should be reflected with Search Bar, Manage Filter, Sorting, Refresh,New,Export buttons and list of resource territory list item",,,
+,,,"5","Click on Refresh","Refresh options should be have dropdown list like Refresh every time, 5 minutes, 10 minutes and 15 minutes",,,
+"104906","Test Case","TC26_Zone Operation Lead Role_View_Resource Territory_Export",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD application and login to the application","CAD application launched and logged in successfully",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Search Field
+Home
+Schedule
+Calendar Management
+Views
+Analytics",,,
+,,,"3","Click on View Option","Views option should contains the following suboptions like:
+Capacity Limitations
+Capacity Used Daily
+Education Waitlist
+Resource Territory
+Task
+Engineer",,,
+,,,"4","Navigate to Resource Territory","Resource Territory View page with the list of Resource details should be displayed",,,
+,,,"5","Check the availablity of  Manage Filter, Sorting, Refresh , Duplicate ,Delete, New and Export options","Manage filter, sorting,  refresh, Delete,New , Export option should be  displayed",,,
+,,,"6","Check the availability of fields like Date , Resource Name , Territories, Address, Max Distance,Max Travel Time","Date , Resource Name , Territories, Address, Max Distance,Max Travel Time fields with detail list should be displayed",,,
+,,,"7","Click on Export","Data present in the Resource Territories view page should be exported and file is downloaded in local device in the Excel format",,,
+,,,"8","Open the exported Excel file","Exported Excel file should be opened in the local device",,,
+,,,"9","Validate the data present export file and and data present in the Resource Territory view","Data should be validated.",,,
+"104907","Test Case","TC27_Zone Operation Lead Role_Views_Task",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected
+",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Home, Schedule, Calendar Management, View , Analytics
+",,,
+,,,"3","Click on View","Below sub options should be reflected
+Capacity Limitations, Capacity Used Daily, Education Waitlist, Resource Territory, Task , Engineer
+",,,
+,,,"4","Click on task option","Task screen should be reflected with Search Bar, Manage Filter, Sorting, Refresh,New,Export buttons and list of notification",,,
+"104908","Test Case","TC28_Zone Operation Lead Role_Views_Task_NotificationListItem",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Home, Schedule, Calendar Management, View , Analytics",,,
+,,,"3"," Click on view and validate the sub options","Below sub options should be reflected
+Capacity Limitations, Capacity Used Daily, Education Waitlist, Resource Territory, Task , Engineer
+",,,
+,,,"4","Click on task option","Task screen should be reflected with Search Bar, Manage Filter, Sorting, Refresh,New,Export buttons and list of notification",,,
+,,,"5","Click on any of the notification from the list","Task screen should be reflected with below options with OK, Apply, Cancel buttons",,,
+"104909","Test Case","TC29_Zone Operation Lead Role_Views_Task_NotificationListItem_Edit_Ok",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Home, Schedule, Calendar Management, View , Analytics
+",,,
+,,,"3"," Click on View","Below sub options should be reflected
+Capacity Limitations, Capacity Used Daily, Education Waitlist, Resource Territory, Task , Engineer
+",,,
+,,,"4","Click on task option","Task screen should be reflected with Search Bar, Manage Filter, Sorting, Refresh,New,Export buttons and list of notification",,,
+,,,"5","Click on any of the notification from the list","Task screen should be reflected with below options with OK, Apply, Cancel buttons",,,
+,,,"6","Update any of the field and Click on OK button","The changes made should be saved",,,
+"104910","Test Case","TC30_Zone Operation Lead Role_Views_Task_Manage Filters_Advance Filter_Conditions",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Home, Schedule, Calendar Management, View , Analytics
+",,,
+,,,"3"," Click on View","Below sub options should be reflected
+Capacity Limitations, Capacity Used Daily, Education Waitlist, Resource Territory, Task , Engineer
+",,,
+,,,"4","Click on task option","Task screen should be reflected with Search Bar, Manage Filter, Sorting, Refresh,New,Export buttons and list of notification",,,
+,,,"5","Click on Manage Filters","Filters Management - Task screen should be displayed",,,
+,,,"6","Click on Add","Task filter 01 * - Conditions folder is created",,,
+,,,"7","Click on Advance Filter","Text Fields is generated like ""Write down the expression to evaluate the condition:""",,,
+,,,"8","Enter the expression, Click on Apply and Save","Expression should be Applied and saved",,,
+"104911","Test Case","TC31_Zone Operation Lead Role_Views_Engineer",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Home, Schedule, Calendar Management, View , Analytics",,,
+,,,"3"," Validate the sub options available","Below sub options should be reflected
+Capacity Limitations, Capacity Used Daily, Education Waitlist, Resource Territory, Task , Engineer",,,
+,,,"4","Click on Engineer option","Task screen should be reflected with Search Bar, Manage Filter, Sorting, Refresh,New,Export buttons and list of Engineers",,,
+"104912","Test Case","TC32_Zone Operation Lead Role_Views_Engineer_New",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Home, Schedule, Calendar Management, View , Analytics",,,
+,,,"3"," Validate the sub options","Below sub options should be reflected
+Capacity Limitations, Capacity Used Daily, Education Waitlist, Resource Territory, Task , Engineer",,,
+,,,"4","Click on Engineer option","Engineer screen should be reflected with Search Bar, Manage Filter, Sorting, Refresh, New, Export buttons and list of engineers",,,
+,,,"5","Click on New","Resource screen should be reflected with  options with OK, Apply, Cancel",,,
+"104913","Test Case","TC33_Zone Operation Lead Role_Views_Engineer_ListofEngineers",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Home, Schedule, Calendar Management, View , Analytics
+",,,
+,,,"3"," Validate the sub options","Below sub options should be reflected
+Capacity Limitations, Capacity Used Daily, Education Waitlist, Resource Territory, Task , Engineer
+",,,
+,,,"4","Click on Engineer option","Engineer screen should be reflected with Search Bar, Manage Filter, Sorting, Refresh, New, Export buttons and list of engineers",,,
+,,,"5","Click on any engineer from the list","Resource screen should be reflected with below options with OK, Apply, Cancel",,,
+"104914","Test Case","TC34_Zone Operation Lead Role_Views_Engineer_ListofEngineers_Edit_OK",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Home, Schedule, Calendar Management, View , Analytics",,,
+,,,"3"," Validate the sub options","Below sub options should be reflected
+Capacity Limitations, Capacity Used Daily, Education Waitlist, Resource Territory, Task , Engineer
+",,,
+,,,"4","Click on Engineer option","Engineer screen should be reflected with Search Bar, Manage Filter, Sorting, Refresh, New, Export buttons and list of engineers",,,
+,,,"5","Click on any engineer from the list","Resource screen should be reflected with below options with OK, Apply, Cancel",,,
+,,,"6","Update any of the field and Click on OK button","The changes made should be saved",,,
+"104915","Test Case","TC35_Zone Operation Lead Role_Views_Engineer_Sorting",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen
+Home, Schedule, Calendar Management, View , Analytics",,,
+,,,"3"," Validate the sub options","Below sub options should be reflected
+Capacity Limitations, Capacity Used Daily, Education Waitlist, Resource Territory, Task , Engineer
+
+",,,
+,,,"4","Click on Engineer option","Engineer screen should be reflected with Search Bar, Manage Filter, Sorting, Refresh,New,Export buttons and list of engineers",,,
+,,,"5","Click on Sorting","Engineer Sorting screen should be displayed",,,
+,,,"6","Drag the Selected Columns and drop in the Sort by table","Dragged select columns should be dropped in the sort by table and sorted",,,
+,,,"7","Click on Sort","Columns should be sorted",,,
+"104916","Test Case","TC36_Zone Operation Lead Role_Views_Engineer_ManageFilters_Rename",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Click on menu button","Below options should be reflected on the left side of the screen",,,
+,,,"3","Validate the options reflected","Below sub options in Views should be reflected",,,
+,,,"4","Click on Engineer option in Views","Engineer screen should be reflected with Search Bar, Manage Filter, Sorting, Refresh, New, Export buttons and list of engineers",,,
+,,,"5","Click on Manage filters","Filters Management - Resource screen should be displayed",,,
+,,,"6","Click on Add","Resource filter 01 * - Conditions folder should be created",,,
+,,,"7","Click on Rename","Filter folder name should be edited",,,
+,,,"8","Enter the name in the Filter folder and Click on save","New name should be saved.",,,
+"104917","Test Case","TC01_Zone Operation Lead Role_HomeScreen",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Validate the options available","Menu, Search bar, Notification button should be reflected",,,
+,,,"3","Validate the home screen message","You can start browsing the different views by clicking the menu button  at the top left. This button is always available for quick navigation between the views. You can also perform a global search for records, objects and views using the Search field in the blue header.
+
+We hope you enjoy this new product! Feedback is always welcome :-)
+
+- The ClickSoftware team",,,
+"104918","Test Case","TC02_Zone Operation Lead Role_HomeScreen_Notification",,,,"AM - Projects\eVO mButler","Sneha KM <sneha.km@siemens-healthineers.com>","Ready"
+,,,"1","Launch CAD application and login to the application","Home screen should be reflected",,,
+,,,"2","Validate the options available","Menu, Search bar, Notification button should be reflected",,,
+,,,"3","Click on Notification icon","Alert Center pop up should be reflected with list of pending notifications Setting and dismiss all alerts button",,,
+,,,"4","Click on Settings","Alert Center Settings should be reflected with Schedule view domains only toggle button, Search Domain, Apply /Cancel button",,,
+,,,"5","Select the required domain from the list and click on Apply","Notifications related to the selected domain should be reflected",,,
+,,,"6","Click on dismiss all alerts","Are you sure? Message should be reflected with Dismiss All and Cancel button",,,
+,,,"7","Click on dismiss all","All the notifications should be removed",,,
+"104957","Test Case","TC12_Zone Operation Lead Role_Schedule_ClipBoard_Notification_Actions_BookAppointment",,,,"AM - Projects\eVO mButler",,"Ready"
+,,,"1","Click on Schedule button","Schedule screen should be reflected with Tasks, Clipboard, Gantt, Map, Working on Domain options",,,
+,,,"2","Click on Task option","Filter,Sorted by : Call Id, Search Task, Split Task list domain, List of notifications option should be reflected",,,
+,,,"3","Click on Actions icon for Open @notification","Below options should be reflected for each notification",,,
+,,,"4","Click on Book Appointment","Appointment Booking pop up should be reflected with Get Appointments / close buttons and Appointment Start date field",,,
+,,,"5","Click on Get Appointments","Appointments available for the week should be reflected",,,
+,,,"6","Select the CSE slot for respective date and time set before","CSE Slot should be selected and Book Slot window popup should be displayed with Book Appointment and Cancel button",,,
+,,,"7","Click on Book Appointment button in the window popup","Appointment Details should be reflected.",,,

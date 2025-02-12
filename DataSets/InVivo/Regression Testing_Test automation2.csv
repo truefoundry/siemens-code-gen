@@ -1,0 +1,316 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+"2422","Test Case","TC - RS - 1897 As a Global Demand Planner, I want to have the ability to adjust the consensus forecast quantity",,,,"SCPP in-vivo\Quality",,"Ready"
+,,,"1","URL : https://na1.kinaxis.net/web/SIET04_QA002/
+Open Rapid Response by clicking on the URL given above.
+","Rapid Response will be visible.",,,
+,,,"2","Create a private scenario using the 'S&OP Candidate scenario'","Private scenario using the 'S&OP Candidate scenario' was created successfully",,,
+,,,"3","Then open the workbook ‘SHS S&OP Consensus Demand Planning’.
+","Able to open the workbook.",,,
+,,,"4","In the data settings dialogue box select the ‘Consensus Demand Plan – Units summary’ worksheet. Select the ‘S&OP Candidate’ scenario. For testing purposes, the scenario 1897 was created
+
+","Able to make selections using the data settings.",,,
+,,,"5","In the data settings dialogue box , select the tab hierarchy.
+Click on “Add hierarchy” and select one of the available hierarchies. In this test we will use SHS customer
+
+","Able to make selection using the hierarchy",,,
+,,,"6","Check if data shows up in the worksheet and view the numbers in the 'Unconstrained Demand Plan' line.","Able to view data.
+",,,
+,,,"7","We can see the Unconstrained demand Plan is the sum of the different forecast streams
+","The 'Unconstrained Demand Plan' shows up correctly.",,,
+,,,"8","When we add an adjustment, the adjustment is added to the initial value. 
+","Able to add adjustment, and after adding adjustment the 'Unconstrained Demand Plan' should show correct numbers
+",,,
+,,,"9","We can create assumptions by clicking on the create assumption button 
+
+","Able to open the assumption dialogue box.
+",,,
+,,,"10","In the assumption we can note the reason of the adjustment, the status of the assumption, the period on which this assumption is valid and the assignee
+
+","Able to add entries in the dialogue window
+",,,
+,,,"11","On the assumption line we can see how many assumptions are related to each bucket. When clicking on the hyperlink, the details of the assumptions are displayed  
+
+","Able to view the assumption
+",,,
+,,,"12","Please note that adjustments and assumptions can be recorded at different levels. 
+For instance, previous adjustment was recorded at country (Germany) level. 
+We can add adjustments at stream level. 
+To do so, select the relevant customer on the SHS Customer hierarchy. In this case, we will use 909 - AT
+
+","Able to add assumptions at different levels
+",,,
+,,,"13","Check that the adjustment displayed at this level is the portion that corresponds to this customer. 
+
+","modify the adjustment at this level and add an assumption is possible
+",,,
+,,,"14","Go back to the aggregated view for all customers and check that the adjustments are considered at this level as well.  
+
+","adjustments are applied
+",,,
+"2423","Test Case","TC - RS - 2107 As a demand planner, I need to review the forecast accuracy for each stream.",,,,"SCPP in-vivo\Quality",,"Ready"
+,,,"1","URL : https://na1.kinaxis.net/web/SIET04_QA002/
+Open Rapid Response by clicking on the URL given above.
+","Rapid Response will be visible.",,,
+,,,"2","Then open the workbook ‘SHS S&OP Forecast Accuracy’ as shown 
+","Workbook is opened.",,,
+,,,"3","In the data settings dialogue box select the ‘Forecast Accuracy’ worksheet. Select the ‘S&OP Candidate’ scenario. 
+
+","The scenario is selected.",,,
+,,,"4","Make sure that in the data settings for Historical Interval Count is selected 12 months period. This value is used for the MAPE calculation.","12 months are set in the Data settings.",,,
+,,,"5","In the data settings dialogue box , select the tab hierarchy.
+Click on “Add hierarchy” and select one of the available hierarchies. In this test we will use SHS customer - EMEA
+
+","Hierarchy is selected.
+",,,
+,,,"6"," To review intervals used for the MAPE calculation and its APE values you can click on the desired Forecast Category, in the Forecast Accuracy worksheet, and the Forecast Accuracy Detail MAPE chart will pop up in the bottom part of the screen.
+","The  Forecast Accuracy Detail MAPE chart is available.
+",,,
+,,,"7","For the MAPE calculation the tool will take into consideration APE measures available from the chart.
+Relevant intervals are highlighted in chart in the screenshot.","APE measures are available from the tool and can be used for calculation testing",,,
+,,,"8","To calculate the final MAPE value the SUM of APE for last 12 months of Historical Interval Count is taken into consideration, divided by the number of intervals (=Historical Interval Count) which is in this case 12 as mentioned.
+
+See the attachment for graphical presentation of the formula.","Values needed for the calculation are available from the tool.",,,
+,,,"9","Results of calculated MAPE are available in the Forecast Accuracy worksheet. In this example we have calculated MAPE for following:
+- Forecast Category: SparePartsCS
+- Lag interval: 1
+- Historical Interval Count: 12
+- Hierarchy: SHS Customer - EMEA
+ ","Final calculation is the same as the one generated by the tool.",,,
+"2424","Test Case","TC - RS - 1886 As a Global Demand Planner, I want to review Global Demand Planner Dashboard so that I can determine the necessary adjustments to demand for this cycle",,,,"SCPP in-vivo\Quality\RS","Daniel Geiger <daniel.geiger@siemens-healthineers.com>","Ready"
+,,,"1","URL : https://na1.kinaxis.net/web/SIET04_QA002/
+Open Rapid Response by clicking on the URL given above.
+","Rapid Response will be visible.",,,
+,,,"2","Then open the dashboard ‘SHS Demand Planner’.
+","dashboard ‘SHS Demand Planner’ is opened in RR
+",,,
+,,,"3","In the data settings dialogue box select the ‘Consensus Demand Plan’ widget. 
+(use a private scenario under S&OP Candidate scenario)","‘Consensus Demand Plan’ is selected in a private scenario
+",,,
+,,,"4","In Consensus Demand Plan Widget edit the range in ‘Show Units or Revenue’ and ‘Currency 'column and select the needed.","In ‘Consensus Demand Plan ‘Widget all demand streams displayed + actual sales are seen.
+",,,
+,,,"5","In Consensus Demand Plan Widget edit the range in ‘Show Units or Revenue’ and ‘Currency 'column and select the needed. click on any data in the widget.
+","In ‘Consensus Demand Plan ‘Widget all demand streams displayed + actual sales are seen. click on it and it will take you to the S&OP consensus demand planning workbook.",,,
+"2425","Test Case","TC - RS - 1887 As a Demand Planner (All), I want to review and adjust pricing for a parts and/or part customers relationship​.",,,,"SCPP in-vivo\Quality",,"Ready"
+,,,"1","https://na1.kinaxis.net/web/SIET04_QA002/
+Open Rapid Response by clicking on the URL given above.
+","Rapid Response will be visible.",,,
+,,,"2","Then open the Workbook ‘SHS Part Properties’ as shown.","Workbook is opened",,,
+,,,"3","In the data settings dialogue box select public scenario 'S&OP candidate'.
+","Scenario 'S&OP candidate' is selected.",,,
+,,,"4","Select the ‘General’ worksheet 
+","Able to view the Average selling price, but cannot see pencil mark and cannot edit value! (except global demand planner and some specified groups)
+",,,
+,,,"5","Create private scenario under S&OP candidate Scenario. In the data settings dialogue box select this created private scenario.","Private Scenario under S&OP candidate Scenario is selected.",,,
+,,,"6","Select the ‘General’ worksheet ,(only global demand planners will be able to edit Average Selling Price).
+
+","Able to view the Average selling price and also edit the selling price. (Pencil mark at the column indicates you have the permission to edit the data)
+",,,
+"2426","Test Case","TC - RS - 1888 As a Demand Planner (All), I want to review and adjust disaggregation rates on part customer hierarchies​.​",,,,"SCPP in-vivo\Quality",,"Ready"
+,,,"1","Open Rapid Response by clicking on the URL given above.
+URL : https://na1.kinaxis.net/web/SIET04_QA002/
+","Rapid Response will be visible.
+",,,
+,,,"2","Open the 'SHS S&OP Forecast Disaggregation' workbook using a private scenario under 'S&OP Candidate'.
+","workbook 'SHS S&OP Forecast Disaggregation' was opened with a private scenario in 'S&OP Candidate'.
+",,,
+,,,"3","The planners can modify the disaggregation rates for one of the following four categories.
+1. Spare Parts CS
+2. Forecast Adjustments
+3. Dependent Dmd From SAP
+4. Statistical
+ All the above listed forecast have the disaggregation rates based on the ‘Historical Sales’
+After opening the workbook select any one of the option from the drop down (shown in snapshot).
+","Able to select one of the option from the list.",,,
+,,,"4","For testing the ratios the planners can create a custom filters as shown below.  The custom filter can be created using number of parts which the planner wants to test. Select the parts and right click on it. Then select the create a new filter.  Give name to the newly created private part filter","Able to create a private part filter",,,
+,,,"5","Using the  ‘Rates Summary – Units’ worksheet the planners can change the ratios using the ‘Override’ row. When there are no override entries the ‘Effective’ shows the ‘Default’ rates. The default rates are calculated using the historical sales. ","Able to edit using the override line ",,,
+"2427","Test Case","TC - RS - 1890 As a Global Demand Planner, I want to be able to adjust the percentage that each demand input uses to calculate the unconstrained demand plan​",,,,"SCPP in-vivo\Quality",,"Ready"
+,,,"1","Open Rapid Response by clicking on the URL given above.
+URL : https://na1.kinaxis.net/web/SIET04_QA002/
+","Rapid Response will be visible.
+",,,
+,,,"2","Create a private scenario using the 'S&OP Candidate' scenario. 
+Open the 'SHS S&OP Demand Planning Ratios' and the 'SHS S&OP Consensus Demand Planning' workbooks.","Able to create a private scenario, and able to open both the workbooks using the newly created scenario.",,,
+,,,"3","In the consensus workbook the following forecast categories contribute 25% to the final forecast numbers.1. Business Line (AT)2. Dmd From SAP3. Spare Parts (CS)
+4. Business Line (CT)
+Pick any part and check if the 'Unconstrained Demand Plan' is being created 25% of 
+four forecast streams.","Able to see that for a selected part we can see that each of the forecast streams are contributing 25% each while calculating the 'Unconstrained Demand Plan'.",,,
+,,,"4","The planners should open the 'Edit Default Ratios' worksheet using the workbook 'SHS S&OP Demand Planning Ratios.  For the selected part (same part that used in step 3) change override ratio using the SHS S&OP Demand Planning Ratios workbook as shown. Save the changes.
+","Able to change the ratios",,,
+,,,"5","After changing the the ratios and recheck if the 'Unconstrained Demand Plan' is being created using the newly defined ratios.","The  'Unconstrained Demand Plan' should use the newly created ratios.
+",,,
+"2428","Test Case","TC - RS - 1891 As a Global/Regional Demand Planner, I want the ability to view the individual forecast inputs and the calculated consensus demand plan​",,,,"SCPP in-vivo\Quality",,"Ready"
+,,,"1","Open Rapid Response by clicking on the URL given above.
+URL : https://na1.kinaxis.net/web/SIET04_QA002/
+","Rapid Response will be visible.
+",,,
+,,,"2","Open the 'SHS S&OP Consensus Demand Planning' workbook using the 'S&OP Candidate' scenario.","workbook 'SHS S&OP Consensus Demand Planning' is opened with using the 'S&OP Candidate' scenario
+",,,
+,,,"3","Check that forecast exists for all the forecast categories.","Forecast exists
+",,,
+,,,"4","In the consensus workbook the following forecast categories are displayed:
+1. Business Line (AT)2. Dmd From SAP3. Spare Parts (CS)4. Business Line (CT)
+","Forecast categories are shown for Business Line (AT), Dmd From SAP, Spare Parts (CS), Business Line (CT).  The 'Unconstrained Demand Plan' should also show up the correct number (if there no ratio override then it should use 25% as default when calculating this line).",,,
+"2429","Test Case","TC - RS - 1892 Ability to apply an override to the consensus demand plan​.​",,,,"SCPP in-vivo\Quality",,"Ready"
+,,,"1","URL : https://na1.kinaxis.net/web/SIET04_QA002/
+Open Rapid Response by clicking on the URL given above.
+","Rapid Response will be visible.",,,
+,,,"2","Open the workbook ‘SHS S&OP Demand Supply Balancing’
+","workbook ‘SHS S&OP Demand Supply Balancing’ is opened in RapidResponse
+",,,
+,,,"3","The data settings dialogue box pops up with default values.
+
+","data setting dialogue is shown in pop up.
+",,,
+,,,"4","Worksheet ‘Demand Supply Balancing – Units Summary’ is opened.
+
+","‘Demand Supply Balancing – Units Summary’ is opened.
+",,,
+,,,"5","Create a private scenario using the 'S&OP Candidate' scenario.","A private scenario using the 'S&OP Candidate' is created
+",,,
+,,,"6","You will see consensus Override highlighted . Enter the override quantity for a month you choose to override
+
+","quantity for a month can be overwritten.
+",,,
+,,,"7","Example – entered 1000 in Consensus Override for Dec-22 and then Press ‘Save’ 
+
+","After the record is saved, the ‘Demand Plan’ row is updated with the override quantity.
+",,,
+"2434","Test Case","TC - RS - 1912 As a Supply Network Planner, I want the ability to view, update and simulate changes to forecast spreading profile",,,,"SCPP in-vivo\Quality",,"Ready"
+,,,"1","Open Rapid Response by clicking on the URL given above.
+URL : https://na1.kinaxis.net/web/SIET04_QA002/
+","Rapid Response will be visible.
+",,,
+,,,"2","Open the workbook ‘SHS S&OP Consensus Demand Planning’ and make sure that forecast exists for a specific part/site/month that has ‘Unconstrained Demand Plan’. 
+
+Note: In the following example we can see that that there are 1500 units (1000 units for Nov and 500 units for Dec).
+","forecast exists for a specific part/site/month that has ‘Unconstrained Demand Plan’.
+",,,
+,,,"3","Open the ‘Horizontal MPS (Due Date) worksheet under the ‘SHS Planning Sheet’ workbook. Select the same part/site combination as shown in the previous slide and select the ‘Calendar_Week’ under the bucket settings. 
+
+","‘Calendar_Week’ under the bucket settings is selected for the ‘Horizontal MPS (Due Date) worksheet under the ‘SHS Planning Sheet’ workbook with selected part/site combination 
+",,,
+,,,"4","Open the ‘Horizontal MPS (Due Date) worksheet under the ‘SHS Planning Sheet’ workbook. On selecting the ‘Calendar_Week’ bucket setting, the forecast line shows the spread numbers.
+
+","Note: Be sure to have checked Auto Statistics by your choice.",,,
+"2435","Test Case","TC - RS - 1918 As a Demand Planner, I want the ability to visualize the forecast consumption",,,,"SCPP in-vivo\Quality",,"Ready"
+,,,"1","Open Rapid Response by clicking on the URL given above.
+URL : https://na1.kinaxis.net/web/SIET04_QA002/
+","Rapid Response will be visible.
+",,,
+,,,"2","Open the 'SHS Forecast Consumption Analysis' workbook. Use the 'Master Production Scheduling' scenario.","The 'SHS Forecast Consumption Analysis' workbook is opened, using the 'Master Production Scheduling' scenario.
+",,,
+,,,"3","Check that the worksheet ‘Actual/Forecast Consumption %’ defined in the ‘SHS Forecast Consumption Analysis’ workbook shows the consensus forecast, spread of the forecast , consumed and unconsumed forecast for a given period. The details and percentages of how the spread forecast is consumed is also displayed. 
+","The worksheet ‘Actual/Forecast Consumption %’ in the ‘SHS Forecast Consumption Analysis’ workbook shows the consensus forecast, spread of the forecast , consumed and unconsumed forecast for a given period.
+
+The details and percentages of how the spread forecast is consumed is also displayed. 
+",,,
+,,,"4","Checkt that the ‘Forecast Consumption Chart’ displays the consumption related numbers. 
+
+","‘Forecast Consumption Chart’ is showing the consumption related numbers. 
+",,,
+,,,"5","Check the ‘Forecast Consumption’ worksheet for the forecast for a customer or part along with the actual orders that are consuming the forecast. 
+
+","Forecast for a customer or part along with the actual orders that are consuming the forecast are shown in  the worksheet 'Forecast Consumption’.
+",,,
+,,,"6","Check that the worksheet shows the actual orders that are consuming the forecast in a given period along with the forecast orders. Also the quantity of the forecast that's consumed or unconsumed is displayed.
+
+","The worksheet displays the actual orders that are consuming the forecast in a given period along with the forecast orders. Also the quantity of the forecast that's consumed or unconsumed are shown.
+",,,
+"2436","Test Case","TC - RS - 1922 Ability to visualize in a waterfall the Demand plan.",,,,"SCPP in-vivo\Quality",,"Ready"
+,,,"1","https://na1.kinaxis.net/web/SIET04_QA002/
+Open Rapid Response by clicking on the URL given above.
+
+","Rapid Response will be visible.",,,
+,,,"2","Open the workbook ‘SHS Demand Waterfalls’.
+
+"," workbook ‘SHS Demand Waterfalls’ is opened.
+",,,
+,,,"3","Select the customer number, Forecast stream, ASOF Date in the selection criteria to filter the data
+
+","workbook shows data based on selection
+",,,
+,,,"4","This worksheet can be used to review historical actual demand and forecast quantities as they were at different points in time specified in the As of Date row. 
+
+This will allow you to view trends and see how closely the past forecasts have matched actual demands.
+The background color of the values in the Quantity by Date column signified the following:
+Yellow—forecast demand
+Blue—actual historical demand
+
+","The quantities are visible for various dates as on the data selected (AS OF Date). ",,,
+"2437","Test Case","TC - RS - 1909 : Ability to review missing master data.",,,,"SCPP in-vivo\Quality",,"Ready"
+,,,"1","URL : https://na1.kinaxis.net/web/SIET04_QA002/
+Open Rapid Response by clicking on the URL given above.
+
+","Rapid Response will be visible.",,,
+,,,"2","Open the workbook ‘SHS Data Integrity Check’.","workbook ‘SHS Data Integrity Check’ is opened
+",,,
+,,,"3","Select ‘Has Issues? = Y(filter the data in the worksheet), it will show parts – having demand and missing sourcing or Average selling price.
+
+","The parts missing in the master data are visible.",,,
+"2488","Test Case","TC - RS - 1885 Ability to add and adjust the Sales forecast, add assumptions and disaggregate automatically to lower levels​",,,,"SCPP in-vivo\Quality","Alice Kaeppner <alice.kaeppner.ext@siemens-healthineers.com>","Ready"
+,,,"1","URL : https://na1.kinaxis.net/web/SIET04_QA002/
+Open Rapid Response by clicking on the URL given
+above.
+","Rapid Response will be visible.
+",,,
+,,,"2","Then open the workbook ‘SHS S&OP Consensus Demand Planning’ as shown in the screen print.","The workbook ""SHS S&OP Consensus Demand Planning' is opened",,,
+,,,"3","In the data settings dialogue box select the ‘Consensus Demand Plan – Unit Summary’worksheet. Select a private scenario under the ‘S&OP Candidate’ scenario as here. (Create a private scenario incase if it doesn't exist under the S&OP Candidate scenario).
+","A private scenario under 'S&OP Candidate' is created and selected.
+",,,
+,,,"4","In Consensus Demand Plan – Unit Summary Worksheet edit the range in ‘Adjustments’ column and select the needed hierarchy.
+","The adjustments column is updated in the Units summary worksheet.
+",,,
+,,,"5","In Consensus Demand Plan – Unit Worksheet edit the range in ‘Adjustments’ column the values have been automatically disaggregate down and roll-up.
+
+","The data updated in Summary view is disaggregated automatically and visible in the Consensus Demand Plan - Units worksheet.
+",,,
+"4007","Test Case","TC - RS - 1897 As a Global Demand Planner, I want to have the ability to adjust the consensus forecast quantity - ME",,,,"SCPP in-vivo\Quality","Jochen Hofmann <jochen.hofmann.ext@siemens-healthineers.com>","Ready"
+,,,"1","URL : https://na1.kinaxis.net/web/SIET04_QA002/
+Open Rapid Response by clicking on the URL given above.
+","Rapid Response will be visible.",,,
+,,,"2","Create a private scenario using the 'S&OP Candidate scenario'","Private scenario using the 'S&OP Candidate scenario' was created successfully",,,
+,,,"3","Then open the workbook ‘SHS S&OP Consensus Demand Planning’.
+","Able to open the workbook.",,,
+,,,"4","In the data settings dialogue box select the ‘Consensus Demand Plan – Units summary’ worksheet. Select the ‘S&OP Candidate’ scenario. For testing purposes, the scenario 1897 was created. Also select unit of measure.
+
+","Able to make selections using the data settings.",,,
+,,,"5","In the data settings dialogue box , select the tab hierarchy.
+Click on “Add hierarchy” and select one of the available hierarchies. In this test we will use SHS customer
+
+","Able to make selection using the hierarchy",,,
+,,,"6","Check if data shows up in the worksheet and view the numbers in the 'Unconstrained Demand Plan' line.","Able to view data.
+",,,
+,,,"7","We can see that the Unconstrained demand Plan is the sum of the different forecast streams 
+
+","The 'Unconstrained Demand Plan' shows up correctly.",,,
+,,,"8","When we add an adjustment, the adjustment is added to the initial value.
+
+","Able to add adjustment, and after adding adjustment the 'Unconstrained Demand Plan' should show correct numbers
+",,,
+,,,"9","We can create assumptions by clicking on the create assumption button 
+
+","Able to open the assumption dialogue box.
+",,,
+,,,"10","In the assumption we can note the reason of the adjustment, the status of the assumption, the period on which this assumption is valid and the assignee
+
+","Able to add entries in the dialogue window
+",,,
+,,,"11","On the assumption line we can see how many assumptions are related to each bucket. When clicking on the hyperlink, the details of the assumptions are displayed  
+
+","Able to view the assumption
+",,,
+,,,"12","Please note that adjustments and assumptions can be recorded at different levels. 
+For instance, previous adjustment was recorded at country (Germany) level. 
+We can add adjustments at stream level. 
+To do so, select the relevant customer on the SHS Customer hierarchy. In this case, we will use 909 - AT
+
+","Able to add assumptions at different levels
+",,,
+,,,"13","Check that the adjustment displayed at this level is the portion that corresponds to this customer. 
+
+","modify the adjustment at this level and add an assumption is possible
+",,,
+,,,"14","Go back to the aggregated view for all customers and check that the adjustments are considered at this level as well.  
+
+","adjustments are applied
+",,,
