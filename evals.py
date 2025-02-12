@@ -4,9 +4,17 @@ from typing import Dict, Union, List, Any
 import Levenshtein
 from codebleu import calc_codebleu
 import code_bert_score
+import nltk
+import logging
 
 # Enable code evaluation from Huggingface
 os.environ["HF_ALLOW_CODE_EVAL"] = "1"
+
+# Suppress NLTK download messages
+logging.getLogger('nltk').setLevel(logging.ERROR)
+nltk.download('wordnet', quiet=True)
+nltk.download('punkt_tab', quiet=True)
+nltk.download('omw-1.4', quiet=True)
 
 def run_code_eval(test_cases: List[str], candidates: List[List[str]]) -> Dict:
     """
