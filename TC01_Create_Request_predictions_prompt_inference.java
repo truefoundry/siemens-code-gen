@@ -2,7 +2,6 @@
 package Admin;
 
 import CompositionRoot.IocBuilder;
-import ControlImplementation.BrowserControl;
 import Enums.*;
 import fate.core.ControlImplementations.CoreStartOptions;
 import fate.core.ControlImplementations.WaitFor;
@@ -34,39 +33,38 @@ public class TC05_Admin_Menu_User_Management
                     new ComparerOptions().takeScreenShotPlatform());
 
             //Step 3
-            List<String> actualTiles = tc.page.getAllTilesNames();
-            tc.addStepInfo("""
-                    Page contains tiles:                 
-                    - User Management
-                    - Escalation Criteria
-                    - Admin Ruleset
-                    """, true, actualTiles.containsAll(List.of("User Management", "Escalation Criteria", "Admin Ruleset")),
-                    new ComparerOptions().takeScreenShotPlatform());
+            List<String> expectedTiles = List.of("User Management", "Escalation Criteria", "Admin Ruleset");
+            List<String> actualTiles = tc.tile.getAllTilesName();
+            boolean areTilesCorrect = actualTiles.containsAll(expectedTiles);
+            tc.addStepInfo("Page contains tiles: - User Management - Escalation Criteria - Admin Ruleset",
+                    true, areTilesCorrect, new ComparerOptions().takeScreenShotPlatform());
 
             //Step 4
-            tc.tab.select(ETab.USER_MANAGEMENT);
+            tc.tile.open(ETile.USER_MANAGEMENT);
             WaitFor.condition(() -> tc.page.exists(EPage.USER_MANAGEMENT));
-            tc.addStepInfo("User management page is displayed with list of all users", true, tc.page.exists(EPage.USER_MANAGEMENT),
-                    new ComparerOptions().takeScreenShotPlatform());
+            tc.addStepInfo("User management page is displayed with list of all users", true,
+                    tc.page.exists(EPage.USER_MANAGEMENT), new ComparerOptions().takeScreenShotPlatform());
 
             //Step 5
-            tc.edit.sendKeys(EEdit.SEARCH, "GID or part of User name or e-mail");
-            WaitFor.condition(() -> tc.table.getItemsFromColumn(ETable.USER_TABLE, EColumn.USER_NAME).contains("Expected User"));
+            String searchQuery = "testUser"; // Example search query
+            tc.edit.sendKeys(EEdit.SEARCH_USER, searchQuery);
+            WaitFor.condition(() -> tc.table.exists(ETable.USER_TABLE));
+            boolean isSearchCorrect = tc.table.getItemsFromColumn(ETable.USER_TABLE, EColumn.USER_NAME)
+                    .stream().anyMatch(name -> name.contains(searchQuery));
             tc.addStepInfo("Only users matching search conditions are displayed", true,
-                    tc.table.getItemsFromColumn(ETable.USER_TABLE, EColumn.USER_NAME).contains("Expected User"),
-                    new ComparerOptions().takeScreenShotPlatform());
+                    isSearchCorrect, new ComparerOptions().takeScreenShotPlatform());
 
             //Step 6
-            tc.button.click(EButton.EDIT_USER);
+            tc.table.clickButtonInRow(ETable.USER_TABLE, EButton.EDIT, 0); // Click edit on the first user in the list
             WaitFor.condition(tc.modal::exists);
-            tc.addStepInfo("Popup with user details, assigned roles and teams is displayed", true, tc.modal.exists(),
-                    new ComparerOptions().takeScreenShotPlatform());
+            tc.addStepInfo("Popup with user details, assigned roles and teams is displayed", true,
+                    tc.modal.exists(), new ComparerOptions().takeScreenShotPlatform());
 
             //Step 7
             tc.button.click(EButton.UPDATE_USER);
             WaitFor.condition(() -> tc.page.exists(EPage.USER_MANAGEMENT));
-            tc.addStepInfo("User management page is displayed users matching search conditions", true, tc.page.exists(EPage.USER_MANAGEMENT),
-                    new ComparerOptions().takeScreenShotPlatform());
+            tc.addStepInfo("User management page is displayed users matching search conditions", true,
+                    tc.page.exists(EPage.USER_MANAGEMENT), new ComparerOptions().takeScreenShotPlatform());
         });
     }
 }

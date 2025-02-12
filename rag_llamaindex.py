@@ -69,7 +69,9 @@ if __name__ == "__main__":
         llm_model="gpt-4o",
         embedding_model="text-embedding-3-large",
         similarity_top_k=8,
-        output_file="data/TC01_Create_Request_predictions_RAG_llamaindex_8.java"
+        ground_truth_file="data/TC01_Internal_User_Landing_Page_Layout_Check.java",
+        prompt_file="data/prompt_865_.txt",
+        output_file="data/TC01_Internal_User_Landing_Page_Layout_Check_RAG_llamaindex_8.java"
     )
     response, source_texts, source_names = run_rag(custom_config)
 
