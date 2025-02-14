@@ -15,6 +15,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_experimental.text_splitter import SemanticChunker
 from langgraph.graph import START, StateGraph
 from typing_extensions import TypedDict
+from evals import evaluate_code
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -24,9 +25,9 @@ class RAGConfig:
     """Configuration for RAG pipeline"""
     chunk_size: int = 1000
     chunk_overlap: int = 200
-    similarity_top_k: int = 3
+    similarity_top_k: int = 10
     embedding_model: str = "text-embedding-3-large"
-    llm_model: str = "gpt-4o-mini"
+    llm_model: str = "gpt-4o"
     prompt_template: str = "rlm/rag-prompt"
     splitter: str = "RecursiveCharacterTextSplitter"
 
@@ -48,7 +49,7 @@ class DocumentProcessor:
         """Load and split local content"""
         loader = DirectoryLoader(directory, glob="*.txt")
         docs = loader.load()
-        return self.text_splitter.split_documents(docs)
+        return docs
 
     def load_web_content(self, url: str) -> List[Document]:
         """Load and split web content"""
@@ -151,7 +152,7 @@ def analyze_token_statistics(directory: str) -> List[int]:
 
 def main():
     # Initialize pipeline
-    config = RAGConfig()
+    config = RAGConfig(similarity_top_k=10, llm_model="gpt-4o")
     processor = DocumentProcessor(config)
     pipeline = RAGPipeline(config)
     
@@ -159,18 +160,26 @@ def main():
     #docs = processor.load_web_content("https://lilianweng.github.io/posts/2023-06-23-agent/")
     documentation_directory = "extracted_texts"
     docs = processor.load_local_content(documentation_directory)
+
+    # Print sample docs
+    print(docs[1].page_content)
+
     pipeline.add_documents(docs)
-    
+    pipeline.config.similarity_top_k = 5
 
     prompt = open("data/prompt.txt", "r").read()
+
+    prompt_basic = open("data/prompt_basic.txt", "r").read()
 
     # Example query
     question = "What is Core Browser Control in Java?"
     answer = pipeline.query(prompt)
     print(answer)
 
-    with open("data/TC01_Create_Request_predictions_RAG.txt", "w") as file:
+    with open("data/TC01_Create_Request_predictions_RAG3_basic.java", "w") as file:
         file.write(answer)
+
+    evaluate_code(f"data/ground_truth.java", f"data/TC01_Create_Request_predictions_RAG3_basic.java")
 
     token_counts = analyze_token_statistics(directory="extracted_texts")
     
