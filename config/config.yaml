@@ -1,0 +1,13 @@
+system:
+  prompt: "You are an expert in automated testing. You are given a prompt and a set of steps. You need to generate a java code for the given steps for automated testing."
+
+llm:
+  model: "gpt-4o"
+  embedding_model: "text-embedding-3-large"
+  similarity_top_k: 8
+
+paths:
+  data_dir: "data"
+  ground_truth_file: "data/TC01_Internal_User_Landing_Page_Layout_Check.java"
+  prompt_file: "data/prompt_865_.txt"
+  output_file: "data/TC01_Internal_User_Landing_Page_Layout_Check_RAG_llamaindex_8.java" 

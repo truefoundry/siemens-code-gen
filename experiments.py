@@ -3,6 +3,7 @@ from prompt_inference import generate_code
 from evals import evaluate_code
 import os
 import glob 
+import yaml
 
 def run_experiment(system_prompt: str, test_case_detail: str, test_case_name: str, config: dict):
     prompt = load_prompt(BASE_PROMPT_PATH, REFERENCE_DIR)
@@ -38,17 +39,18 @@ def get_test_case_details(files: list) -> list:
             test_case_names.append(os.path.basename(file).split(".")[0])
     return test_case_details, test_case_names
 
-if __name__ == "__main__":
-    system_prompt = "You are an expert in automated testing. You are given a prompt and a set of steps. You need to generate a java code for the given steps for automated testing."
-    test_case_files = get_test_case_files("data")
-    test_case_details, test_case_names = get_test_case_details(test_case_files)
-    config = {
-        "llm_model": "gpt-4o",
-        "embedding_model": "text-embedding-3-large",
-        "similarity_top_k": 8,
-        "ground_truth_file": "data/TC01_Internal_User_Landing_Page_Layout_Check.java",
-        "prompt_file": "data/prompt_865_.txt",
-        "output_file": "data/TC01_Internal_User_Landing_Page_Layout_Check_RAG_llamaindex_8.java"
-    }
+def load_config(config_path: str = "config/config.yaml") -> dict:
+    """Load configuration from YAML file"""
+    with open(config_path, "r") as f:
+        return yaml.safe_load(f)
 
-    run_experiments(custom_config, system_prompt, test_case_details, test_case_names)
+if __name__ == "__main__":
+    # Load configuration from YAML
+    config = load_config()
+    
+    # Get test cases using config
+    test_case_files = get_test_case_files(config["paths"]["data_dir"])
+    test_case_details, test_case_names = get_test_case_details(test_case_files)
+    
+    # Run experiments with config
+    run_experiments(config, config["system"]["prompt"], test_case_details, test_case_names)
