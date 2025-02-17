@@ -12,28 +12,33 @@ def run_experiment(system_prompt: str, test_case_detail: str, test_case_name: st
     return prompt_inference_results, rag_results
 
 def run_experiments(config: dict, system_prompt: str, test_case_details: list, test_case_names: list):
-    prompt_inference_results = []
-    rag_results = []
+    prompt_inference_results = {}
+    rag_results = {}
     for test_case_detail, test_case_name in zip(test_case_details, test_case_names):
         prompt_inference_results, rag_results = run_experiment(system_prompt, test_case_detail, test_case_name, config)
-        prompt_inference_results.append(prompt_inference_results)
-        rag_results.append(rag_results)
+        prompt_inference_results[test_case_name] = prompt_inference_results
+        rag_results[test_case_name] = rag_results
     return prompt_inference_results, rag_results
 
-def get_test_case_details(directory: str):
-    # Do a recursive search for all files in the directory and subdirectories
+def get_test_case_files(directory: str) -> list:
+    """Get all test case file paths recursively from directory"""
     files = glob.glob(directory + "/**/*.txt", recursive=True)
-    # Get content of all files
+    return files
+
+def get_test_case_details(files: list) -> list:
+    """Get content of all test case files"""
     test_case_details = []
+    test_case_names = []
     for file in files:
         with open(file, "r") as f:
             test_case_details.append(f.read())
-    return test_case_details
+            test_case_names.append(os.path.basename(file).split(".")[0])
+    return test_case_details, test_case_names
 
 if __name__ == "__main__":
     system_prompt = "You are an expert in automated testing. You are given a prompt and a set of steps. You need to generate a java code for the given steps for automated testing."
-    test_case_details = [get_test_case_details("data/TC01_Internal_User_Landing_Page_Layout_Check.txt")]
-    test_case_names = ["TC01_Internal_User_Landing_Page_Layout_Check"]
+    test_case_files = get_test_case_files("data")
+    test_case_details, test_case_names = get_test_case_details(test_case_files)
     config = {
         "llm_model": "gpt-4o",
         "embedding_model": "text-embedding-3-large",
