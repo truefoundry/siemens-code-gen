@@ -155,6 +155,7 @@ def evaluate_code(reference_path: str, generated_path: str, language: str = "jav
     # Calculate CodeBERT
     codebert_results = compute_codebert_score(reference_code, generated_code, language)
     format_codebert_output(codebert_results)
+    return results, codebleu_results, codebert_results
 
 if __name__ == "__main__":
     # Example usage of main evaluation function

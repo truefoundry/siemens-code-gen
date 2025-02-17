@@ -7,11 +7,18 @@ import glob
 def run_experiment(system_prompt: str, test_case_detail: str, test_case_name: str, config: dict):
     rag_result = run_rag(test_case_detail, custom_config)
     generated_code = generate_code(rag_result)
-    evaluate_code(generated_code, test_case_name)
+    prompt_inference_results = evaluate_code(generated_code, test_case_name)
+    rag_results = evaluate_code(rag_result, test_case_name)
+    return prompt_inference_results, rag_results
 
 def run_experiments(config: dict, system_prompt: str, test_case_details: list, test_case_names: list):
+    prompt_inference_results = []
+    rag_results = []
     for test_case_detail, test_case_name in zip(test_case_details, test_case_names):
-        run_experiment(system_prompt, test_case_detail, test_case_name, config)
+        prompt_inference_results, rag_results = run_experiment(system_prompt, test_case_detail, test_case_name, config)
+        prompt_inference_results.append(prompt_inference_results)
+        rag_results.append(rag_results)
+    return prompt_inference_results, rag_results
 
 def get_test_case_details(directory: str):
     # Do a recursive search for all files in the directory and subdirectories
