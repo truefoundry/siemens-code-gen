@@ -67,8 +67,39 @@ def main():
     args = parser.parse_args()
 
     # Fixed steps and Java files
-    steps_files = ['steps1.txt', 'steps2.txt']  # Example fixed steps files
-    java_files = ['output1.java', 'output2.java']  # Example fixed Java files
+    steps_files = [
+                   'MDLA/Admin/TC_01_838.txt', 
+                   'MDLA/Admin/TC_02_839.txt',
+                   'MDLA/Admin/TC_03_840.txt', 
+                   'MDLA/Admin/TC_04_841.txt',
+                   'MDLA/Admin/TC_05_842.txt',
+                   'MDLA/E2E/TC_01_1199.txt',
+                   'MDLA/External_User/TC_01_854.txt',
+                   'MDLA/External_User/TC_02_855.txt',
+                   'MDLA/External_User/TC_03_856.txt',
+                   'MDLA/External_User/TC_04_857.txt',
+                   'MDLA/External_User/TC_05_863.txt',
+                   'MDLA/Internal_User/TC_01_865.txt',
+                   'MDLA/Internal_User/TC_02_866.txt',
+                   'MDLA/Internal_User/TC_03_867.txt',
+                   'MDLA/Internal_User/TC_04_868.txt',
+                   'MDLA/Internal_User/TC_05_869.txt']
+    java_files = ['/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/Admin/TC01_Landing_Page_Layout_check.java', 
+                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/Admin/TC02_Top_Ribbon_Functionality_Check.java',
+                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/Admin/TC03_Create_Request.java',
+                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/Admin/TC04_Show_Me_All_Requests_Layout_Check.java',
+                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/Admin/TC05_Admin_Menu_User_Management.java',
+                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/E2E/E2E.java',
+                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/External_User/TC01_External_User_Landing_Page_Layout_Check.java',
+                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/External_User/TC02_External_User_Top_Ribbon_Functionality_Check.java',
+                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/External_User/TC03_External_User_Issue_with_an_order_or_deliver.java',
+                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/External_User/TC04_External_User_Question_About_An_Order_Or_eSupport_Assistance.java',
+                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/External_User/TC05_External_User_Question_About_My_Account.java',
+                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/Internal_User/TC01_Internal_User_Landing_Page_Layout_Check.java',
+                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/Internal_User/TC02_Internal_User_Top_Ribbon_Functionality_Check.java',
+                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/Internal_User/TC03_Internal_User_Issue_with_an_order_or_deliver.java',
+                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/Internal_User/TC04_Internal_User_Question_About_An_Order_Or_eSupport_Assistance.java',
+                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/Internal_User/TC05_Internal_User_Question_About_My_Account.java']  # Example fixed Java files
 
     json_output = []
     
