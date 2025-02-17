@@ -5,10 +5,13 @@ import os
 import glob 
 
 def run_experiment(system_prompt: str, test_case_detail: str, test_case_name: str, config: dict):
-    rag_result = run_rag(test_case_detail, custom_config)
-    generated_code = generate_code(rag_result)
+    prompt = load_prompt(BASE_PROMPT_PATH, REFERENCE_DIR)
+    llm = create_llm_client()
+    messages = get_messages(prompt, system_prompt)
+    generated_code = generate_code(llm, messages)
     prompt_inference_results = evaluate_code(generated_code, test_case_name)
-    rag_results = evaluate_code(rag_result, test_case_name)
+    rag_generated_code, rag_source_texts, rag_source_names = run_rag(test_case_detail, custom_config)
+    rag_results = evaluate_code(rag_generated_code, test_case_name)
     return prompt_inference_results, rag_results
 
 def run_experiments(config: dict, system_prompt: str, test_case_details: list, test_case_names: list):

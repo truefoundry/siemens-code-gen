@@ -51,7 +51,7 @@ def create_llm_client() -> ChatOpenAI:
         }
     )
 
-def get_messages(prompt: str) -> list:
+def get_messages(prompt: str, system_prompt: str) -> list:
     """
     Create the message list for the LLM.
     
@@ -62,24 +62,25 @@ def get_messages(prompt: str) -> list:
         list: List of messages for the LLM
     """
     return [
-        SystemMessage(content="You are an expert in automated testing. You are given a prompt and a set of steps. You need to generate a java code for the given steps for automated testing."),
+        SystemMessage(content=system_prompt),
         HumanMessage(content=prompt),
     ]
-
-def generate_and_evaluate_code(output_path: str, reference_path: str, llm: ChatOpenAI, messages: list) -> None:
+def generate_code(llm: ChatOpenAI, messages: list) -> str:
     """
-    Generate code using LLM and evaluate it against reference.
+    Generate code using LLM.
     
     Args:
-        output_path: Path to save generated code
-        reference_path: Path to reference code for evaluation
         llm: LLM client
         messages: List of messages for the LLM
+        
+    Returns:
+        str: Generated code content
     """
+    generated_code = llm.invoke(messages).content
     with open(output_path, "w") as file:
-        file.write(llm.invoke(messages).content)
-    
-    evaluate_code(reference_path, output_path)
+        file.write(generated_code)
+    return generated_code
+
 
 if __name__ == "__main__":
     # Configuration
@@ -91,7 +92,7 @@ if __name__ == "__main__":
     # Execute pipeline
     prompt = load_prompt(BASE_PROMPT_PATH, REFERENCE_DIR)
     llm = create_llm_client()
-    messages = get_messages(prompt)
-    generate_and_evaluate_code(OUTPUT_PATH, REFERENCE_PATH, llm, messages)
-
+    messages = get_messages(prompt, system_prompt)
+    generated_code = generate_code(llm, messages)
+    results = evaluate_code(generated_code, REFERENCE_PATH)
 
