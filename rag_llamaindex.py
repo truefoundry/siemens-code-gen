@@ -5,6 +5,8 @@ from llama_index.llms.openai import OpenAI
 from llama_index.embeddings.openai import OpenAIEmbedding
 import tiktoken
 from evals import evaluate_code
+import os
+from prompt_inference import load_prompt
 
 @dataclass
 class RAGConfig:
@@ -13,7 +15,8 @@ class RAGConfig:
     embedding_model: str = "text-embedding-3-large"
     similarity_top_k: int = 8
     data_dir: str = "extracted_texts"
-    prompt_file: str = "data/prompt_compressed.txt"
+    base_prompt_path: str = "data/base_prompt.txt"
+    input_prompt_path: str = "data/prompt_compressed.txt"
     output_file: str = "data/TC01_Create_Request_predictions_RAG_llamaindex.java"
     ground_truth_file: str = "data/ground_truth.java"
 
@@ -25,9 +28,13 @@ def run_rag(config: RAGConfig = RAGConfig()):
         config: RAGConfig object with pipeline settings
     """
     # Setup LLM and embedding models
-    Settings.llm = OpenAI(model=config.llm_model)
+    Settings.llm = OpenAI(model_name=config.llm_model, 
+                            api_key=os.getenv("TF_API_KEY"), 
+                            api_base=os.getenv("TF_API_BASE"))
     Settings.embed_model = OpenAIEmbedding(
-        model=config.embedding_model, 
+        model_name=config.embedding_model, 
+        api_key=os.getenv("TF_API_KEY"),
+        api_base=os.getenv("TF_API_BASE")
     )
     
     # Load and index documents
@@ -35,12 +42,11 @@ def run_rag(config: RAGConfig = RAGConfig()):
     index = VectorStoreIndex.from_documents(documents)
     
     # Load prompt
-    with open(config.prompt_file, "r") as f:
-        prompt = f.read()
+    prompt = load_prompt(config.base_prompt_path, config.input_prompt_path)
     
     # Get token count
-    token_count = len(tiktoken.encoding_for_model(config.llm_model).encode(prompt))
-    print(f"Prompt token count: {token_count}")
+    # token_count = len(tiktoken.encoding_for_model(config.llm_model).encode(prompt))
+    # print(f"Prompt token count: {token_count}")
     
     # Query and get response
     query_engine = index.as_query_engine(similarity_top_k=config.similarity_top_k)
@@ -66,12 +72,14 @@ def run_rag(config: RAGConfig = RAGConfig()):
 if __name__ == "__main__":
     # Example usage with custom config
     custom_config = RAGConfig(
-        llm_model="gpt-4o",
+        llm_model="openai-main/gpt-4o",
         embedding_model="text-embedding-3-large",
         similarity_top_k=8,
-        ground_truth_file="data/TC01_Internal_User_Landing_Page_Layout_Check.java",
-        prompt_file="data/prompt_865_.txt",
-        output_file="data/TC01_Internal_User_Landing_Page_Layout_Check_RAG_llamaindex_8.java"
+        data_dir="extracted_texts",
+        base_prompt_path="data/base_prompt.txt",
+        input_prompt_path="MDLA/Admin/TC_01_838.txt",
+        ground_truth_file="data/ground_truth/TC01_Create_Request.java",
+        output_file="data/rag/TC01_Create_Request_predictions_RAG.java"
     )
     response, source_texts, source_names = run_rag(custom_config)
 
