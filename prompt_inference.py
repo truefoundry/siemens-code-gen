@@ -22,9 +22,9 @@ def load_prompt(base_prompt_path: str, input_prompt_path: str) -> str:
     with open(input_prompt_path, "r") as f:
         input_prompt = f.read()
     prompt += input_prompt
-    prompt += """```
+    prompt += """
 
-    ```Output:
+    ```Output: java
 
     ```"""
     return prompt

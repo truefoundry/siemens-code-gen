@@ -1,6 +1,7 @@
-You are an expert in writing java-selenium tests. You will be provided with examples of test case requirements and generated java-selenium tests. 
-You will be then asked to write a test case for a new requirement that is provided to you.
 
+Here are some examples of test cases, based on which you should write a test case  in java language for the requirement provided to you.
+
+```
 Example 1:
 # Test Case 839: Admin - Top ribbon - Functionality check
 
