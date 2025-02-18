@@ -50,7 +50,7 @@ def run_experiments(config: dict, test_cases: dict, index: VectorStoreIndex) -> 
         test_config = config.copy()
         test_config["paths"]["input_prompt_path"] = test_case_path
         test_config["paths"]["output_file_rag"] = f"data/rag/{test_case_name}_predictions_RAG.java"
-        test_config["paths"]["output_file_prompt"] = f"data/prompt/{test_case_name}_predictions_prompt.java"
+        test_config["paths"]["output_file_prompt"] = f"data/prompt_inference/{test_case_name}_predictions_prompt.java"
         
         prompt_results, rag_results, prompt_generated_code, rag_generated_code = run_experiment(test_config, index)
         prompt_inference_results[test_case_name] = prompt_results
@@ -75,3 +75,6 @@ if __name__ == "__main__":
     
     # Run experiments
     prompt_results, rag_results = run_experiments(config, test_case_files, index)
+
+    print(prompt_results)
+    print(rag_results)
