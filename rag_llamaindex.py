@@ -54,7 +54,7 @@ def run_rag(config: RAGConfig = RAGConfig()):
     
     # Extract source information
     source_nodes = response.source_nodes
-    source_names = [node.metadata["file_path"] for node in source_nodes]
+    source_names = [os.path.basename(node.metadata["file_path"]) for node in source_nodes]
     source_texts = [node.node.text for node in source_nodes]
     
     print(f"Response generated with {len(source_texts)} source documents")
