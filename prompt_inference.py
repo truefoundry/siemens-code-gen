@@ -2,48 +2,29 @@ from langchain.schema import HumanMessage, SystemMessage
 from langchain_community.chat_models import ChatOpenAI
 from dotenv import load_dotenv
 import os
-load_dotenv(".env")
 from evals import evaluate_code
+from utils import load_prompt, format_java_prompt, load_config
+import yaml
+load_dotenv(".env")
 
-
-def load_prompt(base_prompt_path: str, input_prompt_path: str) -> str:
+def create_llm_client(config: dict) -> ChatOpenAI:
     """
-    Load the base prompt and concatenate with reference texts.
+    Create and configure the LLM client using config parameters.
     
     Args:
-        base_prompt_path: Path to the main prompt file
-        reference_dir: Directory containing reference text files
-    
-    Returns:
-        str: Combined prompt text
-    """
-    with open(base_prompt_path, "r") as f:
-        prompt = f.read()
-    with open(input_prompt_path, "r") as f:
-        input_prompt = f.read()
-    prompt += input_prompt
-    prompt += """
-
-    ```Output: java
-
-    ```"""
-    return prompt
-
-def create_llm_client(model: str, temperature: float, max_tokens: int) -> ChatOpenAI:
-    """
-    Create and configure the LLM client.
-    
+        config: Dictionary containing LLM configuration
+        
     Returns:
         ChatOpenAI: Configured LLM client
     """
     return ChatOpenAI(
-        model="openai-main/gpt-4o",
-        temperature=0.7,
-        max_tokens=8192,
+        model=f"openai-main/{config['llm']['model']}",
+        temperature=config['system']['temperature'],
+        max_tokens=config['system']['max_tokens'],
         model_kwargs={
-            "top_p": 0.8,
-            "presence_penalty": 0,
-            "frequency_penalty": 0
+            "top_p": config['system']['top_p'],
+            "presence_penalty": config['system']['presence_penalty'],
+            "frequency_penalty": config['system']['frequency_penalty']
         },
         streaming=True,
         api_key=os.getenv("TFY_API_KEY"),
@@ -85,16 +66,16 @@ def generate_code(llm: ChatOpenAI, messages: list, output_path: str) -> str:
 
 
 if __name__ == "__main__":
-    # Configuration
-    BASE_PROMPT_PATH = "data/base_prompt.txt"
-    INPUT_PROMPT_PATH = "MDLA/Admin/TC_01_838.txt"
-    GENERATED_CODE_PATH = "data/prompt_inference/TC01_Create_Request_prompt_inference.java"
-    REFERENCE_PATH = "data/ground_truth/TC01_Create_Request_predictions.java"
-    system_prompt = "You are an expert in writing java-selenium tests. You will be provided with examples of test case requirements and generated java-selenium tests. You will be then asked to write a test case for a new requirement that is provided to you."
+    # Load configuration using utils function
+    config = load_config()
+    
     # Execute pipeline
-    prompt = load_prompt(BASE_PROMPT_PATH, INPUT_PROMPT_PATH)
-    llm = create_llm_client(model="openai-main/gpt-4o", temperature=0.7, max_tokens=8192)
-    messages = get_messages(prompt, system_prompt)
-    generated_code = generate_code(llm, messages, GENERATED_CODE_PATH)
-    results = evaluate_code(GENERATED_CODE_PATH, REFERENCE_PATH)
+    prompt = load_prompt(config['paths']['base_prompt_path'], 
+                        config['paths']['input_prompt_path'])
+    llm = create_llm_client(config)
+    messages = get_messages(prompt, config['system']['prompt'])
+    generated_code = generate_code(llm, messages, config['paths']['output_file_prompt'])
+    results = evaluate_code(config['paths']['output_file_prompt'], 
+                          config['paths']['ground_truth_file'])
 
+    print(f"CodeBLEU Score: {results[1]['codebleu']:.3f}")
