@@ -6,7 +6,7 @@ load_dotenv(".env")
 from evals import evaluate_code
 
 
-def load_prompt(base_prompt_path: str, reference_dir: str) -> str:
+def load_prompt(base_prompt_path: str, input_prompt_path: str) -> str:
     """
     Load the base prompt and concatenate with reference texts.
     
@@ -19,15 +19,17 @@ def load_prompt(base_prompt_path: str, reference_dir: str) -> str:
     """
     with open(base_prompt_path, "r") as f:
         prompt = f.read()
-    
-    # Add reference texts
-    for file in os.listdir(reference_dir):
-        with open(f"{reference_dir}/{file}", "r") as f:
-            prompt += f.read()
-    
+    with open(input_prompt_path, "r") as f:
+        input_prompt = f.read()
+    prompt += input_prompt
+    prompt += """```
+
+    ```Output:
+
+    ```"""
     return prompt
 
-def create_llm_client() -> ChatOpenAI:
+def create_llm_client(model: str, temperature: float, max_tokens: int) -> ChatOpenAI:
     """
     Create and configure the LLM client.
     
@@ -65,7 +67,7 @@ def get_messages(prompt: str, system_prompt: str) -> list:
         SystemMessage(content=system_prompt),
         HumanMessage(content=prompt),
     ]
-def generate_code(llm: ChatOpenAI, messages: list) -> str:
+def generate_code(llm: ChatOpenAI, messages: list, output_path: str) -> str:
     """
     Generate code using LLM.
     
@@ -84,15 +86,15 @@ def generate_code(llm: ChatOpenAI, messages: list) -> str:
 
 if __name__ == "__main__":
     # Configuration
-    BASE_PROMPT_PATH = "data/prompt_865_.txt"
-    REFERENCE_DIR = "extracted_text_reference"
-    OUTPUT_PATH = "data/TC01_Internal_User_Landing_Page_Layout_Check_prompt_inference.java"
-    REFERENCE_PATH = "data/TC01_Internal_User_Landing_Page_Layout_Check.java"
-    
+    BASE_PROMPT_PATH = "data/base_prompt.txt"
+    INPUT_PROMPT_PATH = "MDLA/Admin/TC_01_838.txt"
+    GENERATED_CODE_PATH = "data/prompt_inference/TC01_Create_Request_prompt_inference.java"
+    REFERENCE_PATH = "data/ground_truth/TC01_Create_Request_predictions.java"
+    system_prompt = "You are an expert in writing java-selenium tests. You will be provided with examples of test case requirements and generated java-selenium tests. You will be then asked to write a test case for a new requirement that is provided to you."
     # Execute pipeline
-    prompt = load_prompt(BASE_PROMPT_PATH, REFERENCE_DIR)
-    llm = create_llm_client()
+    prompt = load_prompt(BASE_PROMPT_PATH, INPUT_PROMPT_PATH)
+    llm = create_llm_client(model="openai-main/gpt-4o", temperature=0.7, max_tokens=8192)
     messages = get_messages(prompt, system_prompt)
-    generated_code = generate_code(llm, messages)
-    results = evaluate_code(generated_code, REFERENCE_PATH)
+    generated_code = generate_code(llm, messages, GENERATED_CODE_PATH)
+    results = evaluate_code(GENERATED_CODE_PATH, REFERENCE_PATH)
 
