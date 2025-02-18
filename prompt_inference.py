@@ -64,10 +64,16 @@ def generate_code(llm: ChatOpenAI, messages: list, output_path: str) -> str:
         file.write(generated_code)
     return generated_code
 
-
-if __name__ == "__main__":
-    # Load configuration using utils function
-    config = load_config()
+def run_prompt_inference(config: dict) -> tuple:
+    """
+    Run the prompt-based code generation pipeline.
+    
+    Args:
+        config: Configuration dictionary
+        
+    Returns:
+        tuple: (generated_code, results, codebleu_score)
+    """
     
     # Execute pipeline
     prompt = load_prompt(config['paths']['base_prompt_path'], 
@@ -78,4 +84,12 @@ if __name__ == "__main__":
     results = evaluate_code(config['paths']['output_file_prompt'], 
                           config['paths']['ground_truth_file'])
 
+    # Access CodeBLEU score from the correct location in results
+    #codebleu_score = results['codebleu_metrics']['codebleu']
     print(f"CodeBLEU Score: {results[1]['codebleu']:.3f}")
+    return generated_code, results, results[1]['codebleu']
+
+if __name__ == "__main__":
+    # Load configuration using utils function
+    config = load_config()
+    run_prompt_inference(config)

@@ -21,7 +21,7 @@ paths:
   base_prompt_path: "data/base_prompt.txt"
   input_prompt_path: "MDLA/Internal_User/TC_01_865.txt"
   output_file_rag: "data/rag/TC01_Internal_User_predictions_RAG.java"
-  output_file_prompt: "data/prompt_inference/TC01_Internal_User_predictions_prompt.txt"
+  output_file_prompt: "data/prompt_inference/TC01_Internal_User_predictions_prompt.java"
   ground_truth_file: "data/ground_truth/TC01_Internal_User_Landing_Page_Layout_Check.java" 
 
 
