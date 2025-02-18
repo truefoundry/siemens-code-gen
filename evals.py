@@ -155,12 +155,9 @@ def evaluate_code(reference_path: str, generated_path: str, language: str = "jav
     # Calculate CodeBERT
     codebert_results = compute_codebert_score(reference_code, generated_code, language)
     format_codebert_output(codebert_results)
-    return results, codebleu_results, codebert_results
+    return {"base_metrics": results, "codebleu_metrics": codebleu_results, "codebert_metrics": codebert_results}
 
 if __name__ == "__main__":
     # Example usage of main evaluation function
     directory = "data"
-    evaluate_code(f"{directory}/ground_truth.java", f"{directory}/TC01_Create_Request_predictions_RAG.java") # 0.48
-    evaluate_code(f"{directory}/ground_truth.java", f"{directory}/TC01_Create_Request_predictions_context.java") # 0.66
-    evaluate_code(f"{directory}/ground_truth.java", f"{directory}/llm_output.java") # 0.62
-
+    evaluate_code(reference_path="data/ground_truth/TC01_Create_Request.java", generated_path="data/prompt_inference/TC01_Create_Request_prompt_inference.java", language="java")
