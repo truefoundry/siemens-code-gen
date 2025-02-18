@@ -1,4 +1,5 @@
 from rag_llamaindex import create_index, generate_response
+from llama_index.core import VectorStoreIndex
 from prompt_inference import run_prompt_inference
 from evals import evaluate_code
 import os
@@ -8,7 +9,6 @@ from utils import (
     load_config, 
     load_prompt, 
     get_test_case_files, 
-    get_test_case_details,
     format_java_prompt
 )
 
@@ -30,7 +30,7 @@ def run_experiment(config: dict, index: VectorStoreIndex) -> tuple:
     
     return prompt_results, rag_results, prompt_generated_code, rag_generated_code
 
-def run_experiments(config: dict, test_cases: list, index: VectorStoreIndex) -> tuple:
+def run_experiments(config: dict, test_cases: dict, index: VectorStoreIndex) -> tuple:
     """
     Run experiments for multiple test cases
     
@@ -45,17 +45,16 @@ def run_experiments(config: dict, test_cases: list, index: VectorStoreIndex) -> 
     prompt_inference_results = {}
     rag_results = {}
     
-    for test_case in test_cases:
+    for test_case_name, test_case_path in test_cases.items():
         # Create config copy for this test case
         test_config = config.copy()
-        test_config["paths"]["input_prompt_path"] = test_case
-        test_config["paths"]["output_file_rag"] = f"data/rag/{os.path.basename(test_case).split('.')[0]}_predictions_RAG.java"
-        test_config["paths"]["output_file_prompt"] = f"data/prompt/{os.path.basename(test_case).split('.')[0]}_predictions_prompt.txt"
+        test_config["paths"]["input_prompt_path"] = test_case_path
+        test_config["paths"]["output_file_rag"] = f"data/rag/{test_case_name}_predictions_RAG.java"
+        test_config["paths"]["output_file_prompt"] = f"data/prompt/{test_case_name}_predictions_prompt.java"
         
         prompt_results, rag_results, prompt_generated_code, rag_generated_code = run_experiment(test_config, index)
-        test_name = os.path.basename(test_case).split('.')[0]
-        prompt_inference_results[test_name] = prompt_results
-        rag_results[test_name] = rag_results
+        prompt_inference_results[test_case_name] = prompt_results
+        rag_results[test_case_name] = rag_results
     
     return prompt_inference_results, rag_results
 
@@ -69,7 +68,7 @@ if __name__ == "__main__":
     config = load_config()
     
     # Get test cases
-    test_case_files = get_test_case_files(config["paths"]["data_dir"])
+    test_case_files = get_test_case_files(config["paths"]["test_case_files"])
     
     # Create index once for all experiments
     index = create_index(config)

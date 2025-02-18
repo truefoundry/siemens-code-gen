@@ -19,6 +19,7 @@ llm:
 paths:
   data_dir: "extracted_texts"
   base_prompt_path: "data/base_prompt.txt"
+  test_case_files: "MDLA"
   input_prompt_path: "MDLA/Internal_User/TC_01_865.txt"
   output_file_rag: "data/rag/TC01_Internal_User_predictions_RAG.java"
   output_file_prompt: "data/prompt_inference/TC01_Internal_User_predictions_prompt.java"
