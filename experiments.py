@@ -24,10 +24,9 @@ def run_experiment(config: dict, index: VectorStoreIndex) -> tuple:
     Returns:
         tuple: (prompt_inference_results, rag_results, prompt_generated_code, rag_generated_code)
     """
-    prompt_generated_code, prompt_results, prompt_codebleu_score = run_prompt_inference(config)
+    prompt_generated_code, prompt_results = run_prompt_inference(config)
     rag_generated_code, rag_source_texts, rag_source_names = generate_response(index, config)
     rag_results = evaluate_code(config["paths"]["output_file_rag"], config["paths"]["ground_truth_file"])
-    
     return prompt_results, rag_results, prompt_generated_code, rag_generated_code
 
 def run_experiments(config: dict, test_cases: dict, index: VectorStoreIndex) -> tuple:
@@ -51,7 +50,7 @@ def run_experiments(config: dict, test_cases: dict, index: VectorStoreIndex) -> 
         test_config["paths"]["input_prompt_path"] = test_case_path
         test_config["paths"]["output_file_rag"] = f"data/rag/{test_case_name}_predictions_RAG.java"
         test_config["paths"]["output_file_prompt"] = f"data/prompt_inference/{test_case_name}_predictions_prompt.java"
-        
+        #test_config["paths"]["ground_truth_file"] = f"data/ground_truth/{test_case_name}_predictions_prompt.java"
         prompt_results, rag_results, prompt_generated_code, rag_generated_code = run_experiment(test_config, index)
         prompt_inference_results[test_case_name] = prompt_results
         rag_results[test_case_name] = rag_results
