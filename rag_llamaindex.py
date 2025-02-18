@@ -31,10 +31,11 @@ def run_rag(config: RAGConfig = RAGConfig()):
     Settings.llm = OpenAI(model_name=config.llm_model, 
                             api_key=os.getenv("TF_API_KEY"), 
                             api_base=os.getenv("TF_API_BASE"))
+
     Settings.embed_model = OpenAIEmbedding(
         model_name=config.embedding_model, 
-        api_key=os.getenv("TF_API_KEY"),
-        api_base=os.getenv("TF_API_BASE")
+        # api_key=os.getenv("TF_API_KEY"),
+        # api_base=os.getenv("TF_API_BASE")
     )
     
     # Load and index documents

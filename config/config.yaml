@@ -1,13 +1,19 @@
 system:
-  prompt: "You are an expert in automated testing. You are given a prompt and a set of steps. You need to generate a java code for the given steps for automated testing."
+  prompt: "You are an expert in writing java-selenium tests. You will be provided with examples of test case requirements and generated java-selenium tests. You will be then asked to write a test case for a new requirement that is provided to you."
+  temperature: 0.7
+  max_tokens: 8192
+  top_p: 0.8
+  presence_penalty: 0
+  frequency_penalty: 0
 
 llm:
-  model: "gpt-4o"
+  model: "openai-main/gpt-4o"
   embedding_model: "text-embedding-3-large"
   similarity_top_k: 8
 
 paths:
-  data_dir: "data"
-  ground_truth_file: "data/TC01_Internal_User_Landing_Page_Layout_Check.java"
-  prompt_file: "data/prompt_865_.txt"
-  output_file: "data/TC01_Internal_User_Landing_Page_Layout_Check_RAG_llamaindex_8.java" 
+  data_dir: "extracted_texts"
+  base_prompt_path: "data/base_prompt.txt"
+  input_prompt_path: "MDLA/Admin/TC_01_838.txt"
+  output_file: "data/rag/TC01_Create_Request_predictions_RAG.java"
+  ground_truth_file: "data/ground_truth/TC01_Create_Request.java" 
