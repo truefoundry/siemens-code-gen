@@ -84,10 +84,14 @@ def main():
     json_output = []
     
     for steps_file, java_file in zip(steps_files, java_files):
-        steps = read_steps(steps_file)
-        java_code = read_java_code(java_file)
-        code_segments = extract_code_segments(java_code, steps)
-        json_output.extend(generate_json(steps, code_segments))  # Use extend to combine outputs
+        try:
+            steps = read_steps(steps_file)
+            java_code = read_java_code(java_file)
+            code_segments = extract_code_segments(java_code, steps)
+            json_output.extend(generate_json(steps, code_segments)) 
+        except:
+            print(steps_file) 
+            
 
     with open(output_file_path, 'w') as f:
         json.dump(json_output, f, indent=4)
