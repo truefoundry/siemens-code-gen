@@ -86,8 +86,8 @@ def run_prompt_inference(config: dict) -> tuple:
 
     # Access CodeBLEU score from the correct location in results
     #codebleu_score = results['codebleu_metrics']['codebleu']
-    print(f"CodeBLEU Score: {results[1]['codebleu']:.3f}")
-    return generated_code, results, results[1]['codebleu']
+    #print(f"CodeBLEU Score: {results[1]['codebleu']:.3f}")
+    return generated_code, results
 
 if __name__ == "__main__":
     # Load configuration using utils function
