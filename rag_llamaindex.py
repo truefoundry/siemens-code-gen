@@ -105,4 +105,5 @@ if __name__ == "__main__":
     print(source_texts)
     print(source_names)
 
+    os.system(f"code --diff {config['paths']['output_file_rag']} {config['paths']['ground_truth_file']}")
 

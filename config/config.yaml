@@ -23,6 +23,6 @@ paths:
   input_prompt_path: "Formatted_data/Text_files/838.txt"
   output_file_rag: "data/rag/838.java"
   output_file_prompt: "data/prompt_inference/838.java"
-  ground_truth_file: "Formatted_data/Ground_Truth/838.java" 
+  ground_truth_file: "Formatted_data/Ground_Truths/838.java" 
 
 
