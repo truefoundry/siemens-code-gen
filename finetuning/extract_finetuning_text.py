@@ -1,5 +1,6 @@
 import json
-import argparse  # Import argparse to handle command-line arguments
+import argparse  
+import os
 
 # Read steps from steps.txt
 def read_steps(file_path):
@@ -60,47 +61,26 @@ def generate_json(steps, code_segments):
 
 # Main function
 def main():
-    parser = argparse.ArgumentParser(description='Process some files.')
-    parser.add_argument('-o', '--output', type=str, required=True,
-                       help='The output JSON file name')
+    # parser = argparse.ArgumentParser(description='Process some files.')
+    # parser.add_argument('-o', '--output', type=str, required=True,
+    #                    help='The output JSON file name')
 
-    args = parser.parse_args()
+    # args = parser.parse_args()
 
-    # Fixed steps and Java files
-    steps_files = [
-                   'MDLA/Admin/TC_01_838.txt', 
-                   'MDLA/Admin/TC_02_839.txt',
-                   'MDLA/Admin/TC_03_840.txt', 
-                   'MDLA/Admin/TC_04_841.txt',
-                   'MDLA/Admin/TC_05_842.txt',
-                   'MDLA/E2E/TC_01_1199.txt',
-                   'MDLA/External_User/TC_01_854.txt',
-                   'MDLA/External_User/TC_02_855.txt',
-                   'MDLA/External_User/TC_03_856.txt',
-                   'MDLA/External_User/TC_04_857.txt',
-                   'MDLA/External_User/TC_05_863.txt',
-                   'MDLA/Internal_User/TC_01_865.txt',
-                   'MDLA/Internal_User/TC_02_866.txt',
-                   'MDLA/Internal_User/TC_03_867.txt',
-                   'MDLA/Internal_User/TC_04_868.txt',
-                   'MDLA/Internal_User/TC_05_869.txt']
-    java_files = ['/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/Admin/TC01_Landing_Page_Layout_check.java', 
-                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/Admin/TC02_Top_Ribbon_Functionality_Check.java',
-                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/Admin/TC03_Create_Request.java',
-                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/Admin/TC04_Show_Me_All_Requests_Layout_Check.java',
-                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/Admin/TC05_Admin_Menu_User_Management.java',
-                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/E2E/E2E.java',
-                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/External_User/TC01_External_User_Landing_Page_Layout_Check.java',
-                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/External_User/TC02_External_User_Top_Ribbon_Functionality_Check.java',
-                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/External_User/TC03_External_User_Issue_with_an_order_or_deliver.java',
-                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/External_User/TC04_External_User_Question_About_An_Order_Or_eSupport_Assistance.java',
-                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/External_User/TC05_External_User_Question_About_My_Account.java',
-                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/Internal_User/TC01_Internal_User_Landing_Page_Layout_Check.java',
-                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/Internal_User/TC02_Internal_User_Top_Ribbon_Functionality_Check.java',
-                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/Internal_User/TC03_Internal_User_Issue_with_an_order_or_deliver.java',
-                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/Internal_User/TC04_Internal_User_Question_About_An_Order_Or_eSupport_Assistance.java',
-                  '/Users/jitender/Documents/GitHub/siemens-code-gen/DataSets/MDLA/src/test/java/Internal_User/TC05_Internal_User_Question_About_My_Account.java']  # Example fixed Java files
+    output_file_path = "all_data.json"
 
+    steps_folder = '/Users/jitender/Documents/GitHub/siemens-code-gen/Formatted_data/Text_files'  # Specify the folder path for steps files
+    java_folder = '/Users/jitender/Documents/GitHub/siemens-code-gen/Formatted_data/Ground_truths'  # Specify the folder path for Java files
+
+    # if os.path.exists(steps_folder):
+    #     print("Contents of steps folder:", os.listdir(steps_folder))
+    # else:
+    #     print("Steps folder does not exist.")
+
+    steps_files = [os.path.join(steps_folder, f) for f in os.listdir(steps_folder)]
+    java_files = [os.path.join(java_folder, f) for f in os.listdir(java_folder)]
+
+    
     json_output = []
     
     for steps_file, java_file in zip(steps_files, java_files):
@@ -109,7 +89,7 @@ def main():
         code_segments = extract_code_segments(java_code, steps)
         json_output.extend(generate_json(steps, code_segments))  # Use extend to combine outputs
 
-    with open(args.output, 'w') as f:
+    with open(output_file_path, 'w') as f:
         json.dump(json_output, f, indent=4)
 
 if __name__ == "__main__":
