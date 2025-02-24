@@ -45,7 +45,9 @@ def generate_response(index: VectorStoreIndex, config: dict):
         top_p=config["system"]["top_p"],
         presence_penalty=config["system"]["presence_penalty"],
         frequency_penalty=config["system"]["frequency_penalty"],
-        max_tokens=config["system"]["max_tokens"]
+        max_tokens=config["system"]["max_tokens"],
+        # api_base=os.getenv("TFY_BASE_URL"),
+        # api_key=os.getenv("TFY_API_KEY")
     )
     
     # Load and format prompt

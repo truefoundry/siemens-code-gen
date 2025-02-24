@@ -47,8 +47,8 @@ public class TC05_Top_Ribbon_Functionality_Check
 
             //Step 4
             tc.menu.select(EMenu.LANGUAGE);
-            tc.addStepInfo("Options English and Deutsch are displayed.", true, tc.menu.isMenuItemsDisplayed(),
-                    new ComparerOptions().takeScreenShotPlatform());
+            tc.addStepInfo("Options English and Deutsch are displayed.", true, tc.menu.isMenuItemsDisplayed()
+            , new ComparerOptions().takeScreenShotPlatform());
 
             //Step 5
             tc.menu.selectFromDropDown(EMenu.LANGUAGE, "Deutsch");
@@ -66,23 +66,23 @@ public class TC05_Top_Ribbon_Functionality_Check
 
             //Step 7
             tc.menu.select(EMenu.SETTINGS);
-            tc.addStepInfo("Options 'Theme' and 'Email Notification Settings' are displayed.", true, tc.menu.isMenuItemsDisplayed(),
-                    new ComparerOptions().takeScreenShotPlatform());
+            tc.addStepInfo("Options 'Theme' and 'Email Notification Settings' are displayed.", true, tc.menu.isMenuItemsDisplayed()
+                    , new ComparerOptions().takeScreenShotPlatform());
 
             //Step 8
-            tc.menu.selectFromDropDown(EMenu.SETTINGS, "Email Notification Settings");
+            tc.menu.selectFromDropDown(EMenu.SETTINGS, "User Settings");
             WaitFor.specificTime(Duration.ofSeconds(2));
             WaitFor.condition(() -> tc.toggle.exists(EToggle.byIndex(0)));
             tc.addStepInfo("""
                     Email Notifications page is displayed. All notifications are turned on by default.
-                    For reference check attached screenshot""", true, tc.toggle.exists(EToggle.byIndex(0)),
-                    new ComparerOptions().takeScreenShotPlatform());
+                    For reference check attached screenshot""", true, tc.toggle.exists(EToggle.byIndex(0))
+                    , new ComparerOptions().takeScreenShotPlatform());
 
             //Step 9
             tc.stepEvaluator.reset();
             tc.toggle.check(EToggle.byIndex(1));
             tc.toggle.uncheck(EToggle.byIndex(1));
-            tc.stepEvaluator.add(() -> tc.browser.getMessage().contains("Successfully updated settings"),
+            tc.stepEvaluator.add(() -> tc.browser.getMessage().contains("Successfully updated settings") ,
                     "pop up not displayed after Unchecking toggle");
             tc.addStepInfo("Message 'Successfully updated settings' is displayed after any notification option is changed",
                     "ok", tc.stepEvaluator.eval(), new ComparerOptions().takeScreenShotPlatform());

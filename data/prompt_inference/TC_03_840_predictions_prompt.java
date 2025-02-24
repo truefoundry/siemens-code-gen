@@ -19,11 +19,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class TC05_Report_Issue_With_Urgency
+public class TC05_Create_Request_and_Verify
 {
     @ParameterizedTest(name = "842")
-    @MethodSource("DataProvider#TC05_Report_Issue_With_Urgency")
-    void Report_Issue_With_Urgency(Map<String,String> tcData)
+    @MethodSource("DataProvider#TC05_Create_Request_and_Verify")
+    void Create_Request_and_Verify(Map<String,String> tcData)
     {
         IocBuilder.execute(Duration.ofMinutes(20), EResultData.ADMIN, "842", tc ->
         {
@@ -123,9 +123,16 @@ public class TC05_Report_Issue_With_Urgency
                     tc.stepEvaluator.eval(), new ComparerOptions().takeScreenShotPlatform());
 
             //Step 10
-            tc.checkBox.check(ECheckBox.MARK_AS_URGENT);
-            tc.addStepInfo("Checkboxes can be checked.", true, tc.checkBox.isChecked(ECheckBox.MARK_AS_URGENT),
-                    new ComparerOptions().takeScreenShotPlatform());
+            tc.stepEvaluator.reset();
+            tc.checkBox.check(ECheckBox.INFORMATION_ONLY);
+            tc.stepEvaluator
+                    .add(() -> !tc.checkBox.isDisabled(ECheckBox.REFER_OUT_REQUEST_AFTER_SUBMISSION), "check box is not disabled")
+                    .add(() -> tc.checkBox.isChecked(ECheckBox.INFORMATION_ONLY), "check box is not checked");
+            tc.addStepInfo("""
+                    Checkboxes can be checked.           
+                    When one of checkboxes "Informational Only" or "Refer Out Request adter Submission" 
+                    is checked the other is greyed out and impossible to check
+                    """, "ok", tc.stepEvaluator.eval(), new ComparerOptions().takeScreenShotPlatform());
 
             //Step 11
             tc.button.click(EButton.SAVE_PLUS_SUBMIT);

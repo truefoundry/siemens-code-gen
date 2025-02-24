@@ -19,11 +19,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class TC05_Report_Issue_With_Urgency
+public class TC05_Create_Request_With_Urgency
 {
     @ParameterizedTest(name = "842")
-    @MethodSource("DataProvider#TC05_Report_Issue_With_Urgency")
-    void Report_Issue_With_Urgency(Map<String,String> tcData)
+    @MethodSource("DataProvider#TC05_Create_Request_With_Urgency")
+    void Create_Request_With_Urgency(Map<String,String> tcData)
     {
         IocBuilder.execute(Duration.ofMinutes(20), EResultData.ADMIN, "842", tc ->
         {

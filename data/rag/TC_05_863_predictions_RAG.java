@@ -19,11 +19,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class TC05_Report_Issue_With_Urgency
+public class TC05_Question_About_Account
 {
     @ParameterizedTest(name = "842")
-    @MethodSource("DataProvider#TC05_Report_Issue_With_Urgency")
-    void Report_Issue_With_Urgency(Map<String,String> tcData)
+    @MethodSource("DataProvider#TC05_Question_About_Account")
+    void Question_About_Account(Map<String,String> tcData)
     {
         IocBuilder.execute(Duration.ofMinutes(20), EResultData.ADMIN, "842", tc ->
         {
@@ -32,7 +32,7 @@ public class TC05_Report_Issue_With_Urgency
             final String state = tcData.get("State");
             final String language = tcData.get("language");
             final String emailId = "Test@yahoo.in";
-            final String classification = "Missing Product";
+            final String classification = "Account Issue";
             final String shsTeam = "QAP";
             final String subject = Generator.getHashedName("Subject:");
             final String reason = Generator.getHashedName("Reason:");
@@ -49,7 +49,7 @@ public class TC05_Report_Issue_With_Urgency
                     "Landing page is Displayed" : "Landing page is not Displayed", new ComparerOptions().takeScreenShotPlatform());
 
             //Step 2
-            tc.tile.open(ETile.REPORT_AN_ISSUE);
+            tc.tile.open(ETile.QUESTION_ABOUT_ACCOUNT);
             WaitFor.condition(() -> tc.edit.exists(EEdit.MOBILE));
             tc.addStepInfo("Page with details for reporting an issue is opened - Part 1. Personal information",
                     true, tc.progressBar.getNames().contains("Personal Information"), new ComparerOptions().takeScreenShotPlatform());
