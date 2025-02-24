@@ -1,0 +1,7 @@
+| Step | Action | Expected Result |
+|------|--------|------------------|
+| 1 | Tester verifies if he received emails regarding a "Task was assigned to you" for both Functions R&D and Logistics<br><br>Take a screenshot of one email notification | Emails received for both Strategic Evaluation cases |
+| 2 | Tester opens Logistic question of supplier 1 by clicking on GO | Questionnaire opens and only task 7 and 13 are open to receive an input |
+| 3 | Tester enters a score for both questions and press "Submit" | Comments are not mandatory and scores selected are being displayed |
+| 4 | Tester opens R&D question of supplier 1 by clicking on GO | Questionnaire opens |
+| 5 | Tester enters scores as needed and submit | Comments are not mandatory and scores selected are being displayed |

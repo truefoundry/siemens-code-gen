@@ -1,0 +1,5 @@
+| Step | Action | Expected Result |
+|------|--------|------------------|
+| 1 | User verifies if a email notification is received<br><br>Take a screenshot | Email received that a task has been transfered to you |
+| 2 | User clicks on the link and go to the SE to enter the scores for Logistics | Logistics questions 7 and 13 are open to receive a score |
+| 3 | User enters random values and may enter comments as well, and after "Submit" | Scores and comments (i.a.) are accepted. Logistic Task disappear from the To Do list. |

@@ -1,0 +1,28 @@
+| Step | Action | Expected Result |
+|------|--------|------------------|
+| 1 | Edit Manual supplier:<br><br>The Tester goes over the left menu bar and select 'Manual supplier List' | The Manual supplier screen opens |
+| 2 | Edit Manual supplier:<br><br>The Tester selects a manual supplier and presses edit | The Choose QMS screen opens |
+| 3 | Edit Manual supplier:<br><br>The Tester selects a QMS and press SUBMIT | The Define Manual Supplier screen opens |
+| 4 | Edit Manual supplier:<br><br>The Tester changes the street information, go to the country and change to IE for Ireland, then check the dropdown menu for Region of the supplier<br><br>Take a screenshot of the options | Country field display only ISO code with 2 digits and region will show only Regions related to the country chosen. Entries are in alphabetical order and country is autocomplete field |
+| 5 | Edit Manual supplier:<br><br>The Tester select a region from the dropdown, change the internal vendor description and Submit<br><br>Take a screenshot after you have done the changes | Region displayis ISO code with 2 digits, entries are in alphabetical order and country is autocomplete field. Changed values are being shown in the fileds. |
+| 6 | Create Qualification:<br><br>The tester goes now to the left side menu and press Create Qualification | A page with a QMS dropdown opens |
+| 7 | Start the Qualification Task:<br><br>The Tester selects a different QMS (follow the test script pre-requisite column) and clicks SUBMIT | The 'Search for Supplier' screen pops up |
+| 8 | Start the Qualification Task:<br><br>The Tester enters the manual supplier name or ID and clicks 'Search for Suppliers' | In the 'Select a Supplier List' this supplier is listed |
+| 9 | Start the Qualification Task:<br>The Tester selects a supplier from Source SLiM-manual and clicks CONTINUE | The 'Apply Scope' screen pops up |
+| 10 | Apply Scope:<br>The Tester selects "Yes" at "Is the Supplier Quality Relevant" and adds a comment in the internal vendor description field | Quality Relevant "Yes" is selected and the internal vendor description is editable |
+| 11 | Apply Scope:<br>The Tester enters CONTINUE | The Assign CFT Members screen pops up and the Functional Areas PROCUREMENT and QUALITY are prepopulated |
+| 12 | Assign CFT Members:<br>The Tester assigns Procurement to the Business Admin and Quality to yourself | The selected Users are available in the USER NAME field |
+| 13 | Assign CFT Members:<br>The Tester clicks CONTINUE again | The Review and adjust tasks screen pops up in the ToDo List. |
+| 14 | Adjust tasks:<br>The tester clicks GO at Review and adjust tasks<br><br>Please take a screen shot of the tasks | A list with NO selected tasks will appear |
+| 15 | Adjust tasks:<br>The Tester double clicks on the Basic supplier information task and enters the name of the Member that should complete the Task, a due date and press SUBMIT.<br><br>Please assign to yourself | The Window has closed and the selected owner is listed in the owner column and the due date is filled. |
+| 16 | Perform the task assigned to me:<br>Basic supplier information <br><br>The Tester enters GO | The Task Basic supplier information has opend |
+| 17 | Perform the task assigned to me:<br>Basic supplier information <br><br>The Tester attaches the file, clicks the checkbox below and may enter a comment.<br><br>Before continuing take a screenshot of the task | The checkbox is marked and the attached file appears in the task |
+| 18 | The tester enters submit | The basic information task is marked as completed |
+| 19 | Perform the task assigned to me:<br>Set Supplier Status<br><br>The Case Owner enters Go at this task | The Supplier Status screen opens |
+| 20 | Perform the task assigned to me:<br>Set Supplier Status<br><br>The Tester selects Released in the Supplier Status dropdown menu. DO NOT use the SKIP.<br><br>Take a screen shot | Supplier Status is Released |
+| 21 | Perform the task assigned to me:<br>Set Supplier Status<br><br>Test Tester enters SUBMIT | The Case Status changes to Pending-Approval |
+| 22 | Approve the Qualification Task<br><br>The Tester enters Go at the approval task | The Approval screen opens |
+| 23 | Approve the Qualification Task<br><br>The Tester selects APPROVE | The approval task is no longer in the ToDo list |
+| 24 | Create a Upload Documents case<br><br>The Tester selects Create and then "Upload Documents" select the same QMS as the manual case and same supplier and continue<br><br>Take a screenshot of the supplier details after case is created | The UD-ID is available and case was started containing the data available in SLiM Database |
+| 25 | Create a Validity Documents case<br><br>The Tester selects Create and then "Validity Documents" select the same QMS as the manual case and same supplier and continue<br><br>Take a screenshot of the supplier details after case is created | The VD-ID is available and case was started containing the data available in SLiM Database |
+| 26 | Create a second manual supplier<br><br>The Tester selects 'Manual supplier List', create a new manual supplier and fill with any information you want and submit | Case is waiting for BA approval, BA receives an email regarding the case |
