@@ -1,11 +1,13 @@
-from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, StorageContext
+from llama_index.core import VectorStoreIndex, SimpleDirectoryReader
 from llama_index.core.settings import Settings
 from llama_index.llms.openai import OpenAI
 from llama_index.embeddings.openai import OpenAIEmbedding
-import tiktoken
 from evals import evaluate_code
 import os
 from utils import load_config, load_prompt, format_java_prompt
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def create_index(config: dict):
     """
@@ -18,7 +20,9 @@ def create_index(config: dict):
     """
     # Setup embedding model
     Settings.embed_model = OpenAIEmbedding(
-        model_name=config["llm"]["embedding_model"], 
+        model_name=f"openai-main/{config['llm']['embedding_model']}", 
+        api_key=os.getenv("TFY_API_KEY"),
+        api_base=os.getenv("TFY_BASE_URL")
     )
     
     # Load and index documents
@@ -40,14 +44,14 @@ def generate_response(index: VectorStoreIndex, config: dict):
     # Setup LLM with system prompt
     Settings.llm = OpenAI(
         model=config["llm"]["model"],
+        # api_key=os.getenv("TFY_API_KEY"),
+        # api_base=os.getenv("TFY_BASE_URL"),
         system_prompt=config["system"]["prompt"],
         temperature=config["system"]["temperature"],
-        top_p=config["system"]["top_p"],
-        presence_penalty=config["system"]["presence_penalty"],
-        frequency_penalty=config["system"]["frequency_penalty"],
-        max_tokens=config["system"]["max_tokens"],
-        # api_base=os.getenv("TFY_BASE_URL"),
-        # api_key=os.getenv("TFY_API_KEY")
+        # top_p=config["system"]["top_p"],
+        # presence_penalty=config["system"]["presence_penalty"],
+        # frequency_penalty=config["system"]["frequency_penalty"],
+        # max_tokens=config["system"]["max_tokens"],
     )
     
     # Load and format prompt

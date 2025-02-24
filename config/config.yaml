@@ -20,9 +20,9 @@ paths:
   data_dir: "extracted_texts"
   base_prompt_path: "data/base_prompt.txt"
   test_case_files: "MDLA"
-  input_prompt_path: "MDLA/Internal_User/TC_01_865.txt"
-  output_file_rag: "data/rag/TC01_Internal_User_predictions_RAG.java"
-  output_file_prompt: "data/prompt_inference/TC01_Internal_User_predictions_prompt.java"
-  ground_truth_file: "data/ground_truth/TC01_Internal_User_Landing_Page_Layout_Check.java" 
+  input_prompt_path: "Formatted_data/Text_files/838.txt"
+  output_file_rag: "data/rag/838.java"
+  output_file_prompt: "data/prompt_inference/838.java"
+  ground_truth_file: "Formatted_data/Ground_Truth/838.java" 
 
 
