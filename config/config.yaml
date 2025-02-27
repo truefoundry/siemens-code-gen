@@ -6,7 +6,7 @@ You need to write a java class with the steps of the test case.
 
 "
   temperature: 0.3
-  max_tokens: 8192
+  max_tokens: 16384
   top_p: 0.8
   presence_penalty: 0
   frequency_penalty: 0

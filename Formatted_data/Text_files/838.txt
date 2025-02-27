@@ -10,3 +10,38 @@
 | 8 | Click on tile Request Allocation or Saturday Delivery (SET Request) | User is redirected to external Sales Efficiency tool page |
 
 
+You are an expert in writing java-selenium tests. 
+You will be then asked to write a test case for a new requirement that is provided to you.
+
+Output only java code snippet for test case step
+
+
+
+Here are the imports 
+
+package Admin;
+
+import CompositionRoot.IocBuilder;
+import CompositionRoot.MdlaHandler;
+import Enums.*;
+import fate.core.CompositionRoot.TcLog;
+import fate.core.ControlImplementations.CoreCssControl;
+import fate.core.ControlImplementations.CoreKeyboardControl;
+import fate.core.ControlImplementations.CoreStartOptions;
+import fate.core.ControlImplementations.WaitFor;
+import fate.core.Enums.WebDrv;
+import fate.core.Results.ComparerOptions;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.*;
+
+import java.time.Duration;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+Input 
+```| Step | Action | Expected Result |
+| 1 | Log in to Digital Customer Portal | Landing page is Displayed |```
+
+Output
+```java```
