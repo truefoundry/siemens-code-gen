@@ -1,0 +1,34 @@
+| Step | Action | Expected Result |
+|------|--------|------------------|
+| 1 | <br>  Tester clicks on left side menu <br> on 'Create' -> 'Upload Documents' | <br><br>  Choose QMS' screen<br>  opens<br> |
+| 2 | <br><br>  Tester selects at<br>  choose QMS 'AT' and clicks on 'Submit'<br> | <br><br>  Search for Supplier<br>  screen opens<br> |
+| 3 | <br>  The tester enters<br>  in the 'Name' field -><br> 'Alten' and clicks on 'Search for Suppliers' | A list off suppliers (Name beginning with 'Alten') is shown<br> |
+| 4 | <br>  Tester selects the<br>  Supplier 'ALTEN GmbH' setting the check mark at the<br>  related line and <br>clicks on -> 'Continue' | <br><br>  The 'Upload<br>  Documents' screen opens<br> |
+| 5 | <br>  Tester clicks on "submit" without doing anything<br>-> Take a screenshot of the warning message | Warning message "Please correct flagged fields before submitting the form!" appears.<br> |
+| 6 | <br>  Tester clicks on "actions" and<br>-> Take a screenshot of the options in the actions menu | "Cancel case" is available |
+| 7 | <br>  Tester clicks on the dropdown menu and verifies available categories<br>-> Take a screenshot of the options | The following document categories will appear in alphabetical order  - Basic Information- Categorization<br>- Certificate<br>- Contract- Cyber Security<br>- Data Protection<br>- Development<br>- EHS<br>- Others<br>- Performance Evaluation<br>- Qualification<br>- Quality Audit<br>- Risk Evaluation- Sourcing Decision- Tax/ECC<br> |
+| 8 | <br>  Tester selects at<br>  Document Category '<br>Certificate' and <br>clicks on 'Add' | <br><br>  Fields to specify<br>  Certificate will appear (Certificate Type, Valid From, Valid To)<br> |
+| 9 | <br>  The tester clicks<br>  enters in the <br>'Certificate Type' field -> 'ISO' and selects 'ISO<br>  9001:2015' | <br><br>  ISO 9001:2015' is<br>  populated in 'Certificate Type' field<br> |
+| 10 | <br>  The tester selects<br>  in 'Valid From' a Date about <br>1 month in the past | <br><br>  The selected date is<br>  populated in 'Valid From' field<br> |
+| 11 | <br><br>  The tester selects<br>  in 'Valid To' a Date about 1 year in future<br> | <br><br>  The selected date is<br>  populated in 'Valid To' field<br> |
+| 12 | <br><br>  Tester clicks on<br>  'Upload file'<br> | <br><br>  Attach file(s)' popup<br>  opens<br> |
+| 13 | <br><br>  Tester clicks on<br>  'Select file(s)'<br> | <br><br>  Open File' Window<br>  opens<br> |
+| 14 | <br><br>  Tester selects a<br>  random PDF File by clicking on the file and clicking on open<br> | <br><br>  Name of the selected<br>  file will appear in 'Attach file(s)' screen<br> |
+| 15 | <br><br>  Tester clicks on<br>  'Attach'<br> | <br><br>  File will appear<br>  below the 'upload file' button of certificate<br> |
+| 16 | <br>  Tester selects at<br>  Document Category 'Contract' and <br>clicks on 'Add' | <br><br>  Fields to specify<br>  Contract will appear (Certificate Type, Valid From, Valid To)<br> |
+| 17 | <br>  The tester enters<br>  in the 'Document Title' field <br>-> 'QAA for ALTEN 2023-03-20' | <br>  'QAA for ALTEN 2023-03-20' is populated in 'Certificate Title' field |
+| 18 | <br>  The tester enters an invalid URL in the  'URL to CLM module of<br>SCM STAR' field -><br>  'www.siemens.com/qaa' | <br>  URL will be prepopulated in URL field |
+| 19 | <br><br>  Tester clicks on the contract type dropdown menu <br>-> take a screenshot of the available options | <br>The following options appear- QAA - Qality Assurance Agreement<br>- MPA - Master Purchase Agreement<br>- NDA - Non Disclosure Agreement<br>- CoC - Code of Conduct<br>- EDI - Electronic Data Interchange<br>- BOM - BOM Check Agreement<br>- Others |
+| 20 | <br>  Tester clicks on the dropdown menu selects at<br><br> Contract Type 'QAA' | <br><br>  QAA' is populated in<br>  'Contract Type' field<br> |
+| 21 | <br>  Tester selects at<br> Document category 'EHS' and clicks on "add" | <br>  EHS' is is appearing as newo document entry on the bottom of the list<br> |
+| 22 | <br>  Tester selects "Remove document" button for 'EHS' | <br>  EHS' is removed |
+| 23 | <br>   Tester selects at<br> Document category 'Data protection' and clicks on "add" | "Data protection" is populated |
+| 24 | <br>   Tester selects "upload file" and after "Select file" and selects a <br> random Word document (.doc or .docx) and clicks on "attach"<br>-> Take a screenshot of the warning message<br> | Warning message appears |
+| 25 | <br>   Tester closes the window by clicking on the "X" <br> | Popup closes |
+| 26 | <br>   Tester selects "upload file" and after "Select file" and selects a <br> random PDF document and clicks on "attach"<br> | File is accepted |
+| 27 | <br>  Tester clicks on<br>  'Submit' <br>and takes a screenshot<br><br> | Warning message will appear because of invalid SCM STAR Link <br> |
+| 28 | <br>  The tester enters<br>  in the 'URL to CLM module of <br>SCM STAR' field -><br><br> 'https://s2c.siemens.com/go/QAA for ALTEN 2023-03-20' and clicks on "Submit" | To do screen opens. Creating Quality Records is displayed.<br> |
+| 29 | <br>  Tester clicks on "Actions -> "Refresh" than on 'Supplier' and 'Show 360° View'<br> <br> | <br><br>  Supplier 360° View<br>  opens<br> |
+| 30 | <br>  Tester clicks at the bottom of 360° View on 'Documents, Contracts and Cases' | <br><br>  Documents',<br>  'Contracts' and 'Case History' tabs are shown<br> |
+| 31 | <br><br>  Tester checks if<br>  the uploaded Certificate appears <br> | <br>  Uploaded document is<br>  displayed under 'Documents' section and uploaded Contract is displayed under<br>  'Contracts' section (if it is not shown wait until the UD case hast to be in<br>  PENDING-AWAITINGRESPONSE - after submission it can take up to 5 minutes) |
+| 32 | Tester opens Audit Trail document and checks Documents / Contracts Metadata if giffen information is beeing displayed | Audit trail displays <br> document title (not for Certificate), <br> Certificate type (only for Certificate), <br> file name, <br> uploaded by, <br> and upoaded on. <br> Audit Trail section with user actions is available but no field audit history section. |

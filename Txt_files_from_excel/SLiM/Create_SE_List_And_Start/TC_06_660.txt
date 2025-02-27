@@ -1,0 +1,13 @@
+| Step | Action | Expected Result |
+|------|--------|------------------|
+| 1 | Tester verify the final result for Supplier 1, and decide to Adjust the values entered by clicking on "Actions" then "Adjust Questionnaire". | Questionnaire is again open to receive inputs |
+| 2 | Tester changes the value for question 10 to maximum score or minimun (depending on the chosen value before) and enter as comment:<br>Key User changing score for question 10 from XX to XX<br><br>Take a screenshot and submit | Scores are accepted and comments are displayed |
+| 3 | Tester verify the final result for Supplier 2, and decide to Adjust the values entered by clicking on "Actions" then "Adjust Questionnaire". | Questionnaire is again open to receive inputs |
+| 4 | Tester changes the value for question 12 to maximum score or minimun (depending on the chosen value before) and enter as comment:<br>Key User changing score for question 12 supplier 2 from XX to XX<br> <br>Then Submit | Scores are accepted and comments are displayed |
+| 5 | Case Owner go back to the Evaluation list by using the arrow near the SE case ID. | Evaluation opens and Review Evaluation Task is on the To do list |
+| 6 | Case owner verifies the scores in the table for both suppliers | Given scores are being displayed |
+| 7 | Click on GO for Review Evaluation Task | The EL opens and Complete List button is available |
+| 8 | Click on Complete List and a pop up appears user select YES and go to "Actions" then "Refresh" | Task shows that system is creating records for both suppliers |
+| 9 | Tester go to the Tab inside EL case called "History" on the left side, click on "Field History" open the first entry and <br><br>Take a screenshot | For both suppliers BusinessPartnerSummary: calculated property is displayed as aggregation of <br><br> [BusinessPartnerID][SE CaseID][EvaluationPeriodFrom][EvaluationPeriodUntil][TotalScore][Strat. and Proc. Score][Tech. and Innovation Score][Logistics Score] |
+| 10 | Tester clicks "Details" then on the SE-ID link on the table for the supplier 1 | Case opens |
+| 11 | Tester goes to the right side and open the attachment section by clicking on the paper clip symbol | Summary file and audit trail appear |

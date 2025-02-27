@@ -1,0 +1,28 @@
+system:
+  prompt: "You are an expert in writing java-selenium tests. You will be provided with examples of test case requirements and generated java-selenium tests. 
+You will be then asked to write a test case for a new requirement that is provided to you. Use documentation if provided as addtional context. Do not invent class names and base on the documentation context provided
+
+You need to write a java class with the steps of the test case.
+
+"
+  temperature: 0.3
+  max_tokens: 8192
+  top_p: 0.8
+  presence_penalty: 0
+  frequency_penalty: 0
+
+llm:
+  model: "openai-main/gpt-4o"
+  embedding_model: "text-embedding-3-large"
+  similarity_top_k: 8
+
+paths:
+  data_dir: "extracted_texts"
+  base_prompt_path: "data/base_prompt.txt"
+  test_case_files: "MDLA"
+  input_prompt_path: "Formatted_data/Text_files/838.txt"
+  output_file_rag: "data/rag/838.java"
+  output_file_prompt: "data/prompt_inference/838.java"
+  ground_truth_file: "Formatted_data/Ground_Truths/838.java" 
+
+

@@ -1,0 +1,15 @@
+| Step | Action | Expected Result |
+|------|--------|------------------|
+| 1 | <br>  The tester clicks<br>  on "Create" -> "Validity <br>Documents" | <br><br>  "Choose<br>  QMS" screen opens<br> |
+| 2 | <br>  Tester selects at<br>  choose QMS "AT" and clicks on<br> "Submit" | <br><br>  Search for Supplier<br>  screen opens<br> |
+| 3 | <br>  The tester a supplier with documents in 360° view <br>and qualified for the selected QMS<br>clicks on<br>  "Search for Suppliers" | Supplier is displayed |
+| 4 | <br>  Tester selects the<br>  Supplier " setting the check mark at<br>  the <br>related line and clicks on -> "Continue" | <br>  The "Validity Documents" screen opens <br>and existing documents are listed |
+| 5 | <br>  Tester<br>  "selects" one of the available Certificates <br>which is checked as<br>  "Valid?" and changes the <br>"Valid To" date to today | <br><br>  Todays date is<br>  populated in "Valid To" column<br> |
+| 6 | <br>  Tester<br>  "selects" one of the available <br>"Certificates" and one<br>"Contract" which is <br>checked as<br>  "Valid?" and <br>"unchecks" it | <br>  No checkmark at the<br>  selected <br>CERTIFICATE and <br>CONTRACT <br>in column "Valid?" |
+| 7 | <br>  Tester enters the<br>  comment <br>"document and contract are not valid anymore" <br>in<br>  "Comments" field | <br>  "document and<br>  contract are not valid anymore" <br>is populated in "Comments" field |
+| 8 | <br><br>  Tester clicks on<br>  "Submit"<br> | <br>  To do screen opens.<br>  Creating Quality Records is <br>displayed. |
+| 9 | <br><br>  Tester clicks on<br>  "Supplier" and "Show 360° View"<br> | <br><br>  Supplier 360° View<br>  opens<br> |
+| 10 | <br><br>  Tester clicks on<br>  the bottom of 360° View on "Documents, Contracts and Cases"<br> | <br>  "Documents",<br>  "Contracts" and "Case History" tabs<br> are shown |
+| 11 | <br>  Tester checks if<br>  the Certificate validity is shown as <br>not valid (invalid) | <br>  Invalid document is<br>  displayed under "Documents" section as invalid (if it is not shown<br>  wait until the VD case hast to be in PENDING-AWAITINGRESPONSE) |
+| 12 | <br>  Tester opens Audit<br>  Trail document and checks <br>Documents / Contracts Metadata if given<br><br> information is beeing displayed | <br>  In<br>  field audit history section two calculated properties appear<br><br>    Agregation summary <br><br>    DocumentsSummary: aggregation of<br>  [QMS]<br>[SupplierID]<br>[DocumentLabel][DocumentType][ValidFrom]<br>[ValidT][IsValid]<br><br>    ContractsSummary: aggregation of [ContractType]<br>[DocumentTitle][CLMURL][Is<br>  Valid] |
+| 13 | <br>  Tester opens the documents tab and verify files<br>with "Valid to" equal today check if they are <br>valid or not | Information is displayed according to actions done in case |

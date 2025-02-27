@@ -1,0 +1,8 @@
+| Step | Action | Expected Result |
+|------|--------|------------------|
+| 1 | Case owner goes to the remaining SE (Supplier 2) and for the Logistic Task you decide to user Transfer. By clicking on "Actions" going over the Logistic Task and then selecting "Transfer Assignment" | The transfer Assingment screen opens |
+| 2 | Case owner selects "Operator" then "Operator from the System" and then select the Advanced User and "Transfer" | Task is updated accordingly and CET tab does NOT display the new CET member of Logistics, only when task is performed will display |
+| 3 | Tester goes inside SKA task for supplier 1 by pressing GO | Questionnaire opens and only the questions 1 to 8 except 7 are open to receive input |
+| 4 | Tester enters for all questions the maximum scores and provide comments if needed and submit.<br>Press "Actions" then "Refresh" and take a screenshot | Scores are accepted and Strategic Summary table displays the result according chosen values |
+| 5 | Tester goes inside SKA task for supplier 2 by pressing GO | Questionnaire opens and only the questions 1 to 8 except 7 are open to receive input |
+| 6 | Tester enters for all questions the maximum scores and provide comments if needed and "Submit". Refresh the case | Scores are accepted and Strategic Summary table displays the result according chosen values |

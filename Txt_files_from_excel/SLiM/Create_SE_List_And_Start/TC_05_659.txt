@@ -1,0 +1,5 @@
+| Step | Action | Expected Result |
+|------|--------|------------------|
+| 1 | Tester opens the R&D task for the supplier 2 by clicking on GO | Questions assigned to Category "Technology and Innovations" are open to receive an input |
+| 2 | Tester enters random values and "Submit". <br>Click on "Actions" then "Refresh" | Scores are accepted and Strategic Summary table displays the result according chosen values.<br>Case status change to Evaluated |
+| 3 | Tester goes to tab "CET" and check the R&D entry | CET display Standard User as R&D member and Logistics as AU |

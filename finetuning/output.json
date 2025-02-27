@@ -1,0 +1,30 @@
+[
+    {
+        "prompt": "Log in to Digital Customer Portal as Admin - Landing page is displayed",
+        "completion": "tc.browser.start(WebDrv.EDGE, ETestData.QA_ENV_URL, new CoreStartOptions());\ntc.browser.localLogin();\nWaitFor.condition(() -> tc.tile.exists(ETile.REPORT_AN_ISSUE));\ntc.addStepInfo(\"Landing page is Displayed\", true, tc.button.exists(EButton.CONTACT),\nnew ComparerOptions().takeScreenShotPlatform());"
+    },
+    {
+        "prompt": "Click \"Admin\" icon on top ribbon - Page with 3 options for admins is displayed",
+        "completion": "WaitFor.condition(() -> tc.button.exists(EButton.ADMIN));\ntc.button.click(EButton.ADMIN);\nWaitFor.condition(() -> tc.tile.exists(ETile.USER_MANAGEMENT));\nList<String> actualTiles = tc.tile.getAllTilesName();\ntc.addStepInfo(\"Page with 3 options for admins is displayed\", 3, actualTiles.size(),\nnew ComparerOptions().takeScreenShotPlatform());"
+    },
+    {
+        "prompt": "Verify that page contains following tiles:- User Management<br>- Escalation Criteria<br>- Admin Ruleset - Page contains tiles:- User Management<br>- Escalation Criteria<br>- Admin Ruleset",
+        "completion": "List<String> expectedTiles = Arrays.asList(\"User Management\", \"Escalation Criteria\" ,\"Admin Ruleset\");\ntc.addStepInfo(\"\"\"\nPage contains tiles:\n- User Management\n- Escalation Criteria\n- Admin Ruleset\"\"\", true, actualTiles.equals(expectedTiles), new ComparerOptions().takeScreenShotPlatform());"
+    },
+    {
+        "prompt": "Click on tab \"User Management\" - User management page is displayed with list of all users",
+        "completion": "tc.tile.open(ETile.USER_MANAGEMENT);\nWaitFor.condition(() -> !tc.table.getItemsFromColumn(ETable.USER_TABLE, EColumn.byIndex(0)).isEmpty());\nboolean isUserManagementOpened = !tc.table.getItemsFromColumn(ETable.USER_TABLE, EColumn.byIndex(0)).isEmpty();\ntc.addStepInfo(\"User management page is displayed with list of all users\", true, isUserManagementOpened\n, new ComparerOptions().takeScreenShotPlatform());"
+    },
+    {
+        "prompt": "Enter GID, part of User name or e-mail in to search field - Only users matching search conditions are displayed",
+        "completion": "String gid = \"Z004XU7E\";\ntc.edit.sendKeys(EEdit.SEARCH, gid);\nWaitFor.condition(() -> tc.table.getItemsFromColumn(ETable.USER_TABLE, EColumn.byIndex(0)).contains(gid));\nboolean isUserDisplayed = tc.table.getItemsFromColumn(ETable.USER_TABLE, EColumn.byIndex(0)).contains(gid);\ntc.addStepInfo(\"Only users matching search conditions are displayed\", true, isUserDisplayed\n, new ComparerOptions().takeScreenShotPlatform());"
+    },
+    {
+        "prompt": "Click \"Edit\" button - Popup with user details, assigned roles and teams is displayed.For reference check attached screenshot",
+        "completion": "tc.button.click(EButton.EDIT);\nWaitFor.condition(tc.modal::exists);\ntc.addStepInfo(\"\"\"\nPopup with user details, assigned roles and teams is displayed\nFor reference check attached screenshot\"\"\", true, tc.modal.exists(), new ComparerOptions().takeScreenShotPlatform());"
+    },
+    {
+        "prompt": "Click \"Upate User\" button - User management page is dipslayed users matching search conditions",
+        "completion": "tc.button.click(EButton.UPDATE_USER);\nWaitFor.condition(() -> tc.table.getItemsFromColumn(ETable.USER_TABLE, EColumn.byIndex(0)).contains(gid));\nboolean isUserDisplayedAfterUpdate = tc.table.getItemsFromColumn(ETable.USER_TABLE, EColumn.byIndex(0)).contains(gid);\ntc.addStepInfo(\"User management page is dipslayed users matching search conditions\", true,\nisUserDisplayedAfterUpdate, new ComparerOptions().takeScreenShotPlatform());\n});\n}\n\n}"
+    }
+]

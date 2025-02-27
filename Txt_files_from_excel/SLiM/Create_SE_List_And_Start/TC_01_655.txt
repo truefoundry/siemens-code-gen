@@ -1,0 +1,14 @@
+| Step | Action | Expected Result |
+|------|--------|------------------|
+| 1 | Tester goes to the left side menu and select "Create Evaluation List" then click on "Strategic" so that the fields appear | Fields related to Strategic Evaluation appear |
+| 2 | Tester select"Upload a File" and in the upload pop up search for the file with 3 suppliers<br>Press "Upload file" button | A list of Business Partners open with the supplier prepopulated. System recognizes the Business Partner ID name and SKA Name |
+| 3 | Tester adjust the PVO for the first entry (if a blank entry appears delete it by clicking on trash can symbol) | Line disappears and Create Evaluation list button is enabled |
+| 4 | Tester clicks on the "Create Evaluation List" button and enter a value for List Name and Evaluation period from and to | Values are accepted |
+| 5 | Tester clicks on"Create"<br><br>Press Actions, Refresh until SE cases are created | SE-ID gets created after some time and appear in the EL list |
+| 6 | Tester clicks on Go for task called "Assign CET Members" for the first supplier | The task opens |
+| 7 | Tester clicks on "Actions" and <br><br>Take a screenshot of the Options under Actions<br><br>then select "Cancel Case", provide a comment and submit | Case is cancelled |
+| 8 | Tester goes back to the @EL list and check the Case Status for the Cancelled SE | Status show as removed |
+| 9 | Tester clicks on Go for task called "Assign CET Members" for the second supplier | The task opens |
+| 10 | Tester assign Logistics and R&D to Standard User and then press submit | Tasks are assigned to members |
+| 11 | Tester repeats the same for the remaining supplier  and clicks on Go for task called "Assign CET Members" | The task opens |
+| 12 | Tester assign Logistics and R&D to Standard User and then press submit | Tasks are assigned to members |

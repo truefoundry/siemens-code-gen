@@ -1,0 +1,34 @@
+Test Step	Step Action	Step Expected
+		
+1	Log in to Digital Customer Portal	Landing page is displayed
+2	"Check that page contains top ribbon with:-Siemens healthineers Logo
+-My Digital Lab Assistant (vX.X.X)
+-Contact icon
+-Language icon
+-Settings icon
+-Notification bell icon
+-Icon with name shortcut
+-Name of logged in user
+-Admin icon      
+For reference check attached screenshot"	"Landing page top ribbon content is according screenshot and consists of:- Contact icon
+- Settings icon
+- Notification bell icon
+- Icon with name shortcut
+- Name of logged in user
+- Admin icon"
+3	"Check that page contains following tiles:- Report an issue with an order or delivery
+- Show me my Requests
+- Question about an order or eSuport assistance
+- Question about my Account
+- Request Allocation or Saturday Delivery (SET Request)
+
+For reference check attached screenshot"	"Landing page tile content is according screenshot and consists of following tiles:- Report an issue with an order or delivery
+- Show me my Requests
+- Question about an order or eSuport assistance
+- Question about my Account
+- Request Allocation or Saturday Delivery (SET Request)"
+4	Click on tile Report an issue with an order or delivery	Page with details for reporting an issue is opened
+5	Click on tile Show me my Requests	Page with dashboard with all requests created by the user is opened
+6	Click on tile Question about an order or eSuport assistance	Page with details for reporting an issue is opened
+7	Click on tile Question about my Account	Page with details for reporting an issue is opened
+8	Click on tile Request Allocation or Saturday Delivery (SET Request)	User is redirected to external Sales Efficiency tool page

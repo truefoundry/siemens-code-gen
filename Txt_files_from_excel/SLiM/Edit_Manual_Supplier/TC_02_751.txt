@@ -1,0 +1,10 @@
+| Step | Action | Expected Result |
+|------|--------|------------------|
+| 1 | Login with @UserName and @Password<br> Approve the Qualification Task<br><br>The Tester enters Go at this task | The Approval screen opens |
+| 2 | Approve the Qualification Task<br><br>The Tester selects APPROVE<br><br>Take a screen shot after approving it | The approval task is no longer in the ToDo list |
+| 3 | After all Approvers approved the Qualification press the button actions and then Refresh | Two PDF documents will be generated |
+| 4 | Approve or Reject a manual created supplier:<br><br>The BA enters the case ID in the search field and press ENTER | The Case Screen opens |
+| 5 | Approve or Reject a manual created supplier:<br><br>The Tester enters GO at the To Do task of the first case created | The Approval Screen opens |
+| 6 | Approve or Reject a manual created supplier:<br><br>The Tester checks the information provided in the table<br><br>Please take a screen shot of the table | The given information of all manually created supplier for this Business Organization is shown |
+| 7 | Approve or Reject a manual created supplier:<br><br>The Tester selects Approve | SHS ID was created based on the Business Organization and Department given. The case start creating records and Key User who started the case is notified |
+| 8 | Approve or Reject a manual created supplier:<br><br>The Tester clicks on Go for the second manual supplier created, verify the information and click on Reject | SHS ID is not given and case is resolved-rejected. Key User is notified about case cancellation and justification via email |
