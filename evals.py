@@ -160,4 +160,6 @@ def evaluate_code(reference_path: str, generated_path: str, language: str = "jav
 if __name__ == "__main__":
     # Example usage of main evaluation function
     directory = "data"
-    evaluate_code(reference_path="data/ground_truth/TC01_Create_Request.java", generated_path="data/prompt_inference/TC01_Create_Request_prompt_inference.java", language="java")
+    evaluate_code(reference_path="data/generated/842.java", generated_path="data/generated/TC_05_842_predictions_prompt.java", language="java") # 0.60
+    evaluate_code(reference_path="data/generated/842.java", generated_path="data/generated/TC_05_842_predictions_rag.java", language="java") # 0.62
+    evaluate_code(reference_path="data/generated/842.java", generated_path="data/generated/response_qwen.java", language="java") # 0.65

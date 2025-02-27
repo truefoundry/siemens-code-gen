@@ -7,6 +7,7 @@ import os
 from utils import load_config, load_prompt, format_java_prompt
 from dotenv import load_dotenv
 
+
 load_dotenv()
 
 def create_index(config: dict):
@@ -31,7 +32,7 @@ def create_index(config: dict):
     
     return index
 
-def generate_response(index: VectorStoreIndex, config: dict):
+def generate_response(config: dict, index: VectorStoreIndex):
     """
     Generate response using RAG with given index and configuration
     
@@ -44,8 +45,8 @@ def generate_response(index: VectorStoreIndex, config: dict):
     # Setup LLM with system prompt
     Settings.llm = OpenAI(
         model=config["llm"]["model"],
-        # api_key=os.getenv("TFY_API_KEY"),
-        # api_base=os.getenv("TFY_BASE_URL"),
+        #api_key="eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImpJTkY3bXJ2RjA3cWJNUzllelhYeU5GYTBWVSJ9.eyJhdWQiOiI2OTZlNzQ2NS03MjZlLTYxNmMtM2EzOS02MTM4Mzg2NTYxNjEiLCJleHAiOjM2ODc4NDcxODEsImlhdCI6MTcyODI5NTE4MSwiaXNzIjoidHJ1ZWZvdW5kcnkuY29tIiwic3ViIjoiY20xeXViczM4c2l3YzAxcXQ5d2hzNzA3eCIsImp0aSI6Ijg1MjFkZWQxLTExMTQtNGM3YS05ZWJkLTg1NGJjNDUxMDI1ZSIsInVzZXJuYW1lIjoiaW50ZXJuYWx0b2tlbiIsInVzZXJUeXBlIjoic2VydmljZWFjY291bnQiLCJ0ZW5hbnROYW1lIjoiaW50ZXJuYWwiLCJyb2xlcyI6WyJ0ZW5hbnQtbWVtYmVyIl0sImFwcGxpY2F0aW9uSWQiOiI2OTZlNzQ2NS03MjZlLTYxNmMtM2EzOS02MTM4Mzg2NTYxNjEifQ.auxiXDusKgjIBPfaC4VNNaTpFgYBjPFKYPnbcEdzZyF2HmpJ8paqJqWAgMETdj7JmoHTOuiuAQKTAu76JgkzTYU1Kwu6mDH4B6vUuZO6SiWr99Z3thmmnoyvD15Y1E-bCFo_JqSSCxbq-oNKOIEWJ7w3bR3U7jQ-orVAXuR7PkNfFP2-YFBuW-1gYkWizWfFYtAQTQQ8ZBIgC7X9KdNNeWyr0KMxNGXmvYZ-Q4Q9HFgzAIX91DFCO4_3QtB3F4AKWuCQs4V1_Wy9J8gUZAN587TP--CwFqstzo7nlj5pKX6UH4dgwVJ1M6LAaVGouQ_PvzmvRnB9UKUpmluaCS9zIg",
+        #api_base="https://llm-gateway.truefoundry.com/api/inference/openai",
         system_prompt=config["system"]["prompt"],
         temperature=config["system"]["temperature"],
         # top_p=config["system"]["top_p"],
@@ -96,7 +97,7 @@ if __name__ == "__main__":
     # Load configuration from YAML
     config = load_config()
     index = create_index(config)
-    response, source_texts, source_names = generate_response(index, config)
+    response, source_texts, source_names = generate_response(config, index)
     
     evaluate_code(config["paths"]["ground_truth_file"], 
                  config["paths"]["output_file_rag"])
