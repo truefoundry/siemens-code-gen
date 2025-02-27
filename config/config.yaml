@@ -12,7 +12,7 @@ You need to write a java class with the steps of the test case.
   frequency_penalty: 0
 
 llm:
-  model: "gpt-4o"
+  model: "openai-main/gpt-4o"
   embedding_model: "text-embedding-3-large"
   similarity_top_k: 8
 

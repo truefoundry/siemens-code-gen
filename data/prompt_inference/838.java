@@ -27,7 +27,7 @@ public class TC05_Landing_Page_Content_Check
                     new ComparerOptions().takeScreenShotPlatform());
 
             //Step 2
-            List<String> topRibbonItems = tc.ribbon.getItems();
+            List<String> topRibbonItems = tc.ribbon.getAllItems();
             tc.addStepInfo("""
                     Landing page top ribbon content is according screenshot and consists of:
                     - Contact icon
@@ -36,16 +36,16 @@ public class TC05_Landing_Page_Content_Check
                     - Icon with name shortcut
                     - Name of logged in user
                     - Admin icon
-                    """, true, topRibbonItems.containsAll(List.of("Contact", "Settings", "Notification", "Shortcut", "User", "Admin")),
+                    """, true, topRibbonItems.containsAll(List.of("Contact", "Settings", "Notification", "Name Shortcut", "Logged User", "Admin")),
                     new ComparerOptions().takeScreenShotPlatform());
 
             //Step 3
-            List<String> tiles = tc.tile.getAllTileNames();
+            List<String> tiles = tc.tile.getAllTilesNames();
             tc.addStepInfo("""
                     Landing page tile content is according screenshot and consists of following tiles:
                     - Report an issue with an order or delivery
                     - Show me my Requests
-                    - Question about an order or eSuport assistance
+                    - Question about an order or eSupport assistance
                     - Question about my Account
                     - Request Allocation or Saturday Delivery (SET Request)
                     """, true, tiles.containsAll(List.of("Report an issue", "Show me my Requests", "Question about an order", "Question about my Account", "Request Allocation")),
@@ -53,33 +53,33 @@ public class TC05_Landing_Page_Content_Check
 
             //Step 4
             tc.tile.open(ETile.REPORT_AN_ISSUE);
-            WaitFor.condition(() -> tc.page.getTitle().contains("Report an Issue"));
-            tc.addStepInfo("Page with details for reporting an issue is opened", true,
-                    tc.page.getTitle().contains("Report an Issue"), new ComparerOptions().takeScreenShotPlatform());
+            WaitFor.condition(() -> tc.edit.exists(EEdit.MOBILE));
+            tc.addStepInfo("Page with details for reporting an issue is opened", true, tc.progressBar.getNames().contains("Personal Information"),
+                    new ComparerOptions().takeScreenShotPlatform());
 
             //Step 5
             tc.tile.open(ETile.SHOW_ME_All_REQUESTS);
             WaitFor.condition(() -> tc.tab.exists(ETab.MY_DASHBOARD));
-            tc.addStepInfo("Page with dashboard with all requests created by the user is opened", true,
-                    tc.tab.isSelected(ETab.MY_DASHBOARD), new ComparerOptions().takeScreenShotPlatform());
+            tc.addStepInfo("Page with dashboard with all requests created by the user is opened", true, tc.tab.isSelected(ETab.MY_DASHBOARD),
+                    new ComparerOptions().takeScreenShotPlatform());
 
             //Step 6
             tc.tile.open(ETile.QUESTION_ABOUT_ORDER);
-            WaitFor.condition(() -> tc.page.getTitle().contains("Question about an Order"));
-            tc.addStepInfo("Page with details for reporting an issue is opened", true,
-                    tc.page.getTitle().contains("Question about an Order"), new ComparerOptions().takeScreenShotPlatform());
+            WaitFor.condition(() -> tc.edit.exists(EEdit.MOBILE));
+            tc.addStepInfo("Page with details for reporting an issue is opened", true, tc.progressBar.getNames().contains("Personal Information"),
+                    new ComparerOptions().takeScreenShotPlatform());
 
             //Step 7
             tc.tile.open(ETile.QUESTION_ABOUT_ACCOUNT);
-            WaitFor.condition(() -> tc.page.getTitle().contains("Question about my Account"));
-            tc.addStepInfo("Page with details for reporting an issue is opened", true,
-                    tc.page.getTitle().contains("Question about my Account"), new ComparerOptions().takeScreenShotPlatform());
+            WaitFor.condition(() -> tc.edit.exists(EEdit.MOBILE));
+            tc.addStepInfo("Page with details for reporting an issue is opened", true, tc.progressBar.getNames().contains("Personal Information"),
+                    new ComparerOptions().takeScreenShotPlatform());
 
             //Step 8
             tc.tile.open(ETile.REQUEST_ALLOCATION);
-            WaitFor.condition(() -> tc.browser.getCurrentUrl().contains("Sales Efficiency"));
-            tc.addStepInfo("User is redirected to external Sales Efficiency tool page", true,
-                    tc.browser.getCurrentUrl().contains("Sales Efficiency"), new ComparerOptions().takeScreenShotPlatform());
+            WaitFor.condition(() -> tc.browser.getPageTitle().contains("Sales Efficiency Tool"));
+            tc.addStepInfo("User is redirected to external Sales Efficiency tool page", true, tc.browser.getPageTitle().contains("Sales Efficiency Tool"),
+                    new ComparerOptions().takeScreenShotPlatform());
         });
     }
 }
