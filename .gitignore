@@ -1,1 +1,7 @@
 .venv/
+core/
+data/
+Datasets/
+GroundTruth/
+src/
+Txt_files_from_excel/
